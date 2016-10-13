@@ -24,16 +24,15 @@ namespace Assignment2
         String Language = "English";
         Double AdditionalOptions = 0;
 
-
         /* -------- Labels ----------------------------------------------------------- */
-        private void label1_Click(object sender, EventArgs e)
+            private void label1_Click(object sender, EventArgs e)
+                {
+
+                }
+            private void BasePriceLabel_Click(object sender, EventArgs e)
             {
 
             }
-        private void BasePriceLabel_Click(object sender, EventArgs e)
-        {
-
-        }
         /* -------- End of Labels ---------------------------------------------------- */
 
 
@@ -92,113 +91,113 @@ namespace Assignment2
                 CustomDetailingRadioButton.Text = "Custom Detailing";
             }
 
-        // French
-        private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-            // Set language.
-            Language = "French";
-
-            // Update labels.
-            BasePriceLabel.Text = "Prix ​​de Base";
-            AdditionalOptionsLabel.Text = "Options Additionelles";
-            SubTotalLabel.Text = "Sub Total";
-            SalesTaxLabel.Text = "Sous-Total";
-            TotalLabel.Text = "Total";
-            TradeInAllowanceLabel.Text = "Dans le Commerce Allocation";
-            AmountDueLabel.Text = "Montant Dû";
-
-            // Update buttons text.
-            CalculateButton.Text = "Calculer";
-            ClearButton.Text = "Clair";
-            ExitButton.Text = "Sortie";
-
-            // Update menu links.
-            MenuToolStripMenuItem.Text = "Fichier";
-            NewToolStripMenuItem.Text = "Nouveau";
-            SaveToolStripMenuItem.Text = "Sauvegarder";
-            PrintToolStripMenuItem.Text = "Impression";
-            ExitToolStripMenuItem.Text = "Sortie";
-            EditToolStripMenuItem.Text = "Modifier";
-            CalculateToolStripMenuItem.Text = "Calculer";
-            ClearToolStripMenuItem.Text = "Clair";
-            FontToolStripMenuItem.Text = "Police de Caractère";
-            ColourToolStripMenuItem.Text = "Couleur";
-            LanguageToolStripMenuItem.Text = "La Langue";
-            HelpToolStripMenuItem.Text = "Aidez - Moi";
-            AboutToolStripMenuItem.Text = "Sur";
-            EnglishDefaultToolStripMenuItem.Text = "Anglais";
-            FrenchToolStripMenuItem.Text = "Français";
-            SpanishToolStripMenuItem.Text = "Espanol";
-
-            // Update additional options labels. 
-            AdditionalItemsGroupBox.Text = "Des Éléments supplémentaires";
-            StereoSystemCheckBox.Text = "Système stéréo";
-            LeatherInteriorCheckBox.Text = "Intérieur en cuir";
-            ComputerNavigationCheckBox.Text = "Ordinateur de Navigation";
-            PerformancePackageCheckBox.Text = "Performance Paquet";
-            SunRoofCheckBox.Text = "Toit Ouvrant";
-            ExtendedWarrantyCheckBox.Text = "Garantie Prolongée";
-
-            // Update Exterior Finish labels.
-            ExteriorFinishBox.Text = "Finition Extérieure";
-            StandardRadioButton.Text = "Standard";
-            PearlizedRadioButton.Text = "Pearlized";
-            CustomDetailingRadioButton.Text = "Détailler Personnalisé";
-        }
-
-        // Spanish
-        private void spanishToolStripMenuItem_Click(object sender, EventArgs e)
-            {
+            // French
+            private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
+                {
                 // Set language.
-                Language = "Spanish";
+                Language = "French";
 
                 // Update labels.
-                BasePriceLabel.Text = "Precio Base";
-                AdditionalOptionsLabel.Text = "Opciones Adicionales";
+                BasePriceLabel.Text = "Prix ​​de Base";
+                AdditionalOptionsLabel.Text = "Options Additionelles";
                 SubTotalLabel.Text = "Sub Total";
-                SalesTaxLabel.Text = "Sales Tax";
-                TotalLabel.Text = "Impuesto de venta";
-                TradeInAllowanceLabel.Text = "En el Comercio - Asignación";
-                AmountDueLabel.Text = "Monto a Pagar";
+                SalesTaxLabel.Text = "Sous-Total";
+                TotalLabel.Text = "Total";
+                TradeInAllowanceLabel.Text = "Dans le Commerce Allocation";
+                AmountDueLabel.Text = "Montant Dû";
 
                 // Update buttons text.
-                CalculateButton.Text = "Calcular";
-                ClearButton.Text = "Claro";
-                ExitButton.Text = "Salida";
+                CalculateButton.Text = "Calculer";
+                ClearButton.Text = "Clair";
+                ExitButton.Text = "Sortie";
 
                 // Update menu links.
-                MenuToolStripMenuItem.Text = "Archivo";
-                NewToolStripMenuItem.Text = "Nuevo";
-                SaveToolStripMenuItem.Text = "Salvar";
-                PrintToolStripMenuItem.Text = "Impresión";
-                ExitToolStripMenuItem.Text = "Salida";
-                EditToolStripMenuItem.Text = "Editar";
-                CalculateToolStripMenuItem.Text = "Calcular";
-                ClearToolStripMenuItem.Text = "Claro";
-                FontToolStripMenuItem.Text = "Fuente";
-                ColourToolStripMenuItem.Text = "Color";
-                LanguageToolStripMenuItem.Text = "Idioma";
-                HelpToolStripMenuItem.Text = "Ayuda";
-                AboutToolStripMenuItem.Text = "Acerca de";
-                EnglishDefaultToolStripMenuItem.Text = "Inglés";
-                FrenchToolStripMenuItem.Text = "Francés";
-                SpanishToolStripMenuItem.Text = "Español";
+                MenuToolStripMenuItem.Text = "Fichier";
+                NewToolStripMenuItem.Text = "Nouveau";
+                SaveToolStripMenuItem.Text = "Sauvegarder";
+                PrintToolStripMenuItem.Text = "Impression";
+                ExitToolStripMenuItem.Text = "Sortie";
+                EditToolStripMenuItem.Text = "Modifier";
+                CalculateToolStripMenuItem.Text = "Calculer";
+                ClearToolStripMenuItem.Text = "Clair";
+                FontToolStripMenuItem.Text = "Police de Caractère";
+                ColourToolStripMenuItem.Text = "Couleur";
+                LanguageToolStripMenuItem.Text = "La Langue";
+                HelpToolStripMenuItem.Text = "Aidez - Moi";
+                AboutToolStripMenuItem.Text = "Sur";
+                EnglishDefaultToolStripMenuItem.Text = "Anglais";
+                FrenchToolStripMenuItem.Text = "Français";
+                SpanishToolStripMenuItem.Text = "Espanol";
 
                 // Update additional options labels. 
-                AdditionalItemsGroupBox.Text = "Artículos Adicionales";
-                StereoSystemCheckBox.Text = "Sistema Estéreo";
-                LeatherInteriorCheckBox.Text = "Interior de Cuero";
-                ComputerNavigationCheckBox.Text = "Ordenador de Navegación";
-                PerformancePackageCheckBox.Text = "Paquete de Alto Rendimiento";
-                SunRoofCheckBox.Text = "Sun Roof";
-                ExtendedWarrantyCheckBox.Text = "Garantía Extendida";
+                AdditionalItemsGroupBox.Text = "Des Éléments supplémentaires";
+                StereoSystemCheckBox.Text = "Système stéréo";
+                LeatherInteriorCheckBox.Text = "Intérieur en cuir";
+                ComputerNavigationCheckBox.Text = "Ordinateur de Navigation";
+                PerformancePackageCheckBox.Text = "Performance Paquet";
+                SunRoofCheckBox.Text = "Toit Ouvrant";
+                ExtendedWarrantyCheckBox.Text = "Garantie Prolongée";
 
                 // Update Exterior Finish labels.
-                ExteriorFinishBox.Text = "Acabado Exterior";
-                StandardRadioButton.Text = "Estándar";
-                PearlizedRadioButton.Text = "Perlado";
-                CustomDetailingRadioButton.Text = "Detallando Personalizada";
-        }
+                ExteriorFinishBox.Text = "Finition Extérieure";
+                StandardRadioButton.Text = "Standard";
+                PearlizedRadioButton.Text = "Pearlized";
+                CustomDetailingRadioButton.Text = "Détailler Personnalisé";
+            }
+
+            // Spanish
+            private void spanishToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    // Set language.
+                    Language = "Spanish";
+
+                    // Update labels.
+                    BasePriceLabel.Text = "Precio Base";
+                    AdditionalOptionsLabel.Text = "Opciones Adicionales";
+                    SubTotalLabel.Text = "Sub Total";
+                    SalesTaxLabel.Text = "Sales Tax";
+                    TotalLabel.Text = "Impuesto de venta";
+                    TradeInAllowanceLabel.Text = "En el Comercio - Asignación";
+                    AmountDueLabel.Text = "Monto a Pagar";
+
+                    // Update buttons text.
+                    CalculateButton.Text = "Calcular";
+                    ClearButton.Text = "Claro";
+                    ExitButton.Text = "Salida";
+
+                    // Update menu links.
+                    MenuToolStripMenuItem.Text = "Archivo";
+                    NewToolStripMenuItem.Text = "Nuevo";
+                    SaveToolStripMenuItem.Text = "Salvar";
+                    PrintToolStripMenuItem.Text = "Impresión";
+                    ExitToolStripMenuItem.Text = "Salida";
+                    EditToolStripMenuItem.Text = "Editar";
+                    CalculateToolStripMenuItem.Text = "Calcular";
+                    ClearToolStripMenuItem.Text = "Claro";
+                    FontToolStripMenuItem.Text = "Fuente";
+                    ColourToolStripMenuItem.Text = "Color";
+                    LanguageToolStripMenuItem.Text = "Idioma";
+                    HelpToolStripMenuItem.Text = "Ayuda";
+                    AboutToolStripMenuItem.Text = "Acerca de";
+                    EnglishDefaultToolStripMenuItem.Text = "Inglés";
+                    FrenchToolStripMenuItem.Text = "Francés";
+                    SpanishToolStripMenuItem.Text = "Español";
+
+                    // Update additional options labels. 
+                    AdditionalItemsGroupBox.Text = "Artículos Adicionales";
+                    StereoSystemCheckBox.Text = "Sistema Estéreo";
+                    LeatherInteriorCheckBox.Text = "Interior de Cuero";
+                    ComputerNavigationCheckBox.Text = "Ordenador de Navegación";
+                    PerformancePackageCheckBox.Text = "Paquete de Alto Rendimiento";
+                    SunRoofCheckBox.Text = "Sun Roof";
+                    ExtendedWarrantyCheckBox.Text = "Garantía Extendida";
+
+                    // Update Exterior Finish labels.
+                    ExteriorFinishBox.Text = "Acabado Exterior";
+                    StandardRadioButton.Text = "Estándar";
+                    PearlizedRadioButton.Text = "Perlado";
+                    CustomDetailingRadioButton.Text = "Detallando Personalizada";
+            }
         /* -------- End of Language -------------------------------------------------- */
 
 
@@ -208,11 +207,13 @@ namespace Assignment2
             {
                 Calculate();
             }
+
             // Clear Button
             private void ClearButton_Click(object sender, EventArgs e)
             {
                 Clear();
             }
+
             // Exit Button
             private void ExitButton_Click(object sender, EventArgs e)
             {
@@ -225,19 +226,19 @@ namespace Assignment2
             // File / New
             private void newToolStripMenuItem_Click(object sender, EventArgs e)
                 {
-
+                    New();
                 }
 
             // File / Save
             private void saveToolStripMenuItem_Click(object sender, EventArgs e)
             {
-
+                Save();
             }
 
             // File / Print
             private void printToolStripMenuItem_Click(object sender, EventArgs e)
             {
-
+                Print();
             }
 
             // File / Exit
@@ -272,51 +273,141 @@ namespace Assignment2
 
             // Help / About
             private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
-                        {
-                            MessageBox.Show("This program calculates the amount due on a New or Used Vehicle");
-                        }
+            {
+                try
+                {
+                    if (Language == "English")
+                    {
+                        MessageBox.Show("This program calculates the amount due on a New or Used Vehicle.");
+                    }
+                    else if (Language == "French")
+                    {
+                        MessageBox.Show("Ce programme calcule le montant dû sur un véhicule neuf ou d'occasion.");
+                    }
+                    else if (Language == "French")
+                    {
+                        MessageBox.Show("Este programa calcula la cantidad debida en un vehículo nuevo o usado.");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("There was an error selecting your language.");
+                }            
+            }
         /* -------- End of Menu ------------------------------------------------------ */
 
+        /* ---==---- Font Size --------------------------------===---------------------- */
+            private void FontSize16_Click(object sender, EventArgs e)
+            {
+                ChangeFont(16);
+            }
+            private void FontSize12_Click(object sender, EventArgs e)
+            {
+                ChangeFont(12);
+            }
+            private void FontSize2_Click(object sender, EventArgs e)
+            {
+                ChangeFont(8);
+            }
+            public void ChangeFont(int Size)
+                {
+                    String FontStyle = "Times New Roman";
+
+                    // Update Labels.
+                    BasePriceLabel.Font = new Font(FontStyle, Size);
+                    AdditionalOptionsLabel.Font = new Font(FontStyle, Size);
+                    SubTotalLabel.Font = new Font(FontStyle, Size);
+                    SalesTaxLabel.Font = new Font(FontStyle, Size);
+                    TotalLabel.Font = new Font(FontStyle, Size);
+                    TradeInAllowanceLabel.Font = new Font(FontStyle, Size);
+                    AmountDueLabel.Font = new Font(FontStyle, Size);
+
+                    // Update buttons text.
+                    CalculateButton.Font = new Font(FontStyle, Size);
+                    ClearButton.Font = new Font(FontStyle, Size);
+                    ExitButton.Font = new Font(FontStyle, Size);
+
+                    // Update menu links.
+                    MenuToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    NewToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    SaveToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    PrintToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    ExitToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    EditToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    CalculateToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    ClearToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    FontToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    ColourToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    LanguageToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    HelpToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    AboutToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    EnglishDefaultToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    FrenchToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    SpanishToolStripMenuItem.Font = new Font(FontStyle, Size);
+
+                    // Update additional options labels. 
+                    AdditionalItemsGroupBox.Font = new Font(FontStyle, Size);
+                    StereoSystemCheckBox.Font = new Font(FontStyle, Size);
+                    LeatherInteriorCheckBox.Font = new Font(FontStyle, Size);
+                    ComputerNavigationCheckBox.Font = new Font(FontStyle, Size);
+                    PerformancePackageCheckBox.Font = new Font(FontStyle, Size);
+                    SunRoofCheckBox.Font = new Font(FontStyle, Size);
+                    ExtendedWarrantyCheckBox.Font = new Font(FontStyle, Size);
+
+                    // Update Exterior Finish labels.
+                    ExteriorFinishBox.Font = new Font(FontStyle, Size);
+                    StandardRadioButton.Font = new Font(FontStyle, Size);
+                    PearlizedRadioButton.Font = new Font(FontStyle, Size);
+                    CustomDetailingRadioButton.Font = new Font(FontStyle, Size);
+                }
+        /* ---==---- End Font Size --------------------------------===------------------ */
 
         /* ---==---- Methods --------------------------------===---------------------- */
             private void Calculate()
-        {
-            try
             {
-                // Get values from user.
-                Double BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
-                Double TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
+                try
+                {
+                    // Get values from user.
+                    Double BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
+                    Double TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
 
-                // Calculate additional options.
-                CalculateAdditionalOptions();
+                    // Calculate additional options.
+                    CalculateAdditionalOptions();
                 
-
-                AdditionalOptions = Convert.ToDouble(AdditionalOptionsTextbox.Text);
-                Double Subtotal = BasePrice + AdditionalOptions;
-                SubTotalTextbox.Text = Subtotal.ToString();
-                SalesTaxTextbox.Text = "13%";
-                Double Total = Subtotal * 1.13;
-                Total = Math.Round(Total, 2);
-                TotalTextbox.Text = Total.ToString();
-                Double AmountDue = Total - TradeInAllowance;
-                AmountDueTextbox.Text = AmountDue.ToString();
-
-            }
-            catch
-            {
-                if (Language == "English")
+                    AdditionalOptions = Convert.ToDouble(AdditionalOptionsTextbox.Text);
+                    Double Subtotal = BasePrice + AdditionalOptions;
+                    SubTotalTextbox.Text = Subtotal.ToString();
+                    SalesTaxTextbox.Text = "13%";
+                    Double Total = Subtotal * 1.13;
+                    Total = Math.Round(Total, 2);
+                    TotalTextbox.Text = Total.ToString();
+                    Double AmountDue = Total - TradeInAllowance;
+                    if (AmountDue > 0)
+                    {
+                        AmountDueTextbox.ForeColor = System.Drawing.Color.Red;
+                    }
+                    else if (AmountDue < 0)
+                    {
+                        AmountDueTextbox.ForeColor = System.Drawing.Color.Green;
+                    }
+                    AmountDueTextbox.Text = AmountDue.ToString();
+                    
+                } // End of try.
+                catch
                 {
-                    MessageBox.Show(":( General Error.");
+                    if (Language == "English")
+                    {
+                        MessageBox.Show(":( General Error.");
+                    }
+                    else if (Language == "French")
+                    {
+                        MessageBox.Show(":( Erreur générale.");
+                    }
+                    else if (Language == "Spanish")
+                    {
+                        MessageBox.Show(":( Error general.");
+                    }
                 }
-                else if (Language == "French")
-                {
-                    MessageBox.Show(":( Erreur générale.");
-                }
-                else if (Language == "Spanish")
-                {
-                    MessageBox.Show(":( Error general.");
-                }
-            }
         } // End of Calculate method.
             public void Clear()
                 {
@@ -351,7 +442,18 @@ namespace Assignment2
                     Application.Exit();
                 }
             }
+            public void New()
+            {
 
+            }
+            public void Save()
+            {
+
+            }
+            public void Print()
+            {
+
+            }
             public void CalculateAdditionalOptions()
             {
                 // Clears existing values.
@@ -394,7 +496,7 @@ namespace Assignment2
         /* ----=---- End of Methods ------------------------------------------------------ */
 
         /* --------- Additional Options Active Pricing ------------------------------------------------ */
-        private void StereoSystemCheckBox_CheckedChanged(object sender, EventArgs e)
+            private void StereoSystemCheckBox_CheckedChanged(object sender, EventArgs e)
             {
                 // Update additional options box.
                 CalculateAdditionalOptions();
@@ -453,7 +555,9 @@ namespace Assignment2
         {
 
         }
+        private void AmountDueTextbox_TextChanged(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
