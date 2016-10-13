@@ -23,9 +23,11 @@ namespace Assignment2
         // Variables
         String Language = "English";
         Double AdditionalOptions = 0;
+        Double BasePrice;
+        Double TradeInAllowance;
 
         /* -------- Labels ----------------------------------------------------------- */
-            private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
                 {
 
                 }
@@ -68,6 +70,9 @@ namespace Assignment2
                 ClearToolStripMenuItem.Text = "Clear";
                 FontToolStripMenuItem.Text = "Font";
                 ColourToolStripMenuItem.Text = "Colour";
+                WhiteDefaultToolStripMenuItem.Text = "White";
+                LightBlueToolStripMenuItem.Text = "Light Blue";
+                LightYellowToolStripMenuItem.Text = "Light Yellow";
                 LanguageToolStripMenuItem.Text = "Language";
                 HelpToolStripMenuItem.Text = "Help";
                 AboutToolStripMenuItem.Text = "About";
@@ -93,7 +98,7 @@ namespace Assignment2
 
             // French
             private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
-                {
+            {
                 // Set language.
                 Language = "French";
 
@@ -122,6 +127,9 @@ namespace Assignment2
                 ClearToolStripMenuItem.Text = "Clair";
                 FontToolStripMenuItem.Text = "Police de Caractère";
                 ColourToolStripMenuItem.Text = "Couleur";
+                WhiteDefaultToolStripMenuItem.Text = "Blanc";
+                LightBlueToolStripMenuItem.Text = "Bleu Clair";
+                LightYellowToolStripMenuItem.Text = "Jaune Clair";
                 LanguageToolStripMenuItem.Text = "La Langue";
                 HelpToolStripMenuItem.Text = "Aidez - Moi";
                 AboutToolStripMenuItem.Text = "Sur";
@@ -176,6 +184,9 @@ namespace Assignment2
                     ClearToolStripMenuItem.Text = "Claro";
                     FontToolStripMenuItem.Text = "Fuente";
                     ColourToolStripMenuItem.Text = "Color";
+                    WhiteDefaultToolStripMenuItem.Text = "Blanco";
+                    LightBlueToolStripMenuItem.Text = "Azul Claro";
+                    LightYellowToolStripMenuItem.Text = "Amarillo Claro";
                     LanguageToolStripMenuItem.Text = "Idioma";
                     HelpToolStripMenuItem.Text = "Ayuda";
                     AboutToolStripMenuItem.Text = "Acerca de";
@@ -284,7 +295,7 @@ namespace Assignment2
                     {
                         MessageBox.Show("Ce programme calcule le montant dû sur un véhicule neuf ou d'occasion.");
                     }
-                    else if (Language == "French")
+                    else if (Language == "Spanish")
                     {
                         MessageBox.Show("Este programa calcula la cantidad debida en un vehículo nuevo o usado.");
                     }
@@ -362,14 +373,70 @@ namespace Assignment2
                 }
         /* ---==---- End Font Size --------------------------------===------------------ */
 
+        /* ---==---- Change Colour --------------------------------===------------------ */
+            // White
+            private void whiteDefaultToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                this.BackColor = System.Drawing.Color.White;
+            }
+
+            // Light Blue
+            private void lightBlueToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                this.BackColor = System.Drawing.Color.LightBlue;
+            }
+
+            // Light Yellow
+            private void lightYellowToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                this.BackColor = System.Drawing.Color.LightYellow;
+            }
+        /* ---==---- End of Change Colour --------------------------------===--------- */
+
         /* ---==---- Methods --------------------------------===---------------------- */
-            private void Calculate()
+        private void Calculate()
             {
                 try
                 {
                     // Get values from user.
-                    Double BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
-                    Double TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
+                    try
+                    {
+                        BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
+                    }
+                    catch
+                    {
+                        if (Language == "English")
+                        {
+                            MessageBox.Show(":( Base price has an invalid input.");
+                        }
+                        else if (Language == "French")
+                        {
+                            MessageBox.Show(":( Prix ​​de base a une entrée non valide.");
+                        }
+                        else if (Language == "Spanish")
+                        {
+                            MessageBox.Show(":( Precio base tiene una entrada no válida.");
+                        }
+                    }
+                    try
+                    {
+                        TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
+                    }
+                    catch
+                    {
+                        if (Language == "English")
+                        {
+                            MessageBox.Show(":( Trade in allowance has an invalid input.");
+                        }
+                        else if (Language == "French")
+                        {
+                            MessageBox.Show(":( Commerce de l'allocation a une entrée non valide.");
+                        }
+                        else if (Language == "Spanish")
+                        {
+                            MessageBox.Show(":( El comercio de asignación tiene una entrada no válida.");
+                        }
+                    }
 
                     // Calculate additional options.
                     CalculateAdditionalOptions();
@@ -382,16 +449,20 @@ namespace Assignment2
                     Total = Math.Round(Total, 2);
                     TotalTextbox.Text = Total.ToString();
                     Double AmountDue = Total - TradeInAllowance;
+
+                    // Change text box colour based on amount owing.
                     if (AmountDue > 0)
                     {
-                        AmountDueTextbox.ForeColor = System.Drawing.Color.Red;
+                        AmountDueTextbox.ForeColor = Color.Red;
+                        AmountDueTextbox.BackColor = Color.White;
                     }
                     else if (AmountDue < 0)
                     {
-                        AmountDueTextbox.ForeColor = System.Drawing.Color.Green;
+                        AmountDueTextbox.ForeColor = Color.Green;
+                        AmountDueTextbox.BackColor = Color.White;
                     }
+
                     AmountDueTextbox.Text = AmountDue.ToString();
-                    
                 } // End of try.
                 catch
                 {

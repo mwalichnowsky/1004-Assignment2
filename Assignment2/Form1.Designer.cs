@@ -76,6 +76,9 @@
             this.CalculateButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.WhiteDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LightBlueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LightYellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.AdditionalItemsGroupBox.SuspendLayout();
             this.ExteriorFinishBox.SuspendLayout();
@@ -332,6 +335,10 @@
             // 
             // ColourToolStripMenuItem
             // 
+            this.ColourToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.WhiteDefaultToolStripMenuItem,
+            this.LightBlueToolStripMenuItem,
+            this.LightYellowToolStripMenuItem});
             this.ColourToolStripMenuItem.Name = "ColourToolStripMenuItem";
             this.ColourToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ColourToolStripMenuItem.Text = "Colour";
@@ -557,11 +564,32 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // WhiteDefaultToolStripMenuItem
+            // 
+            this.WhiteDefaultToolStripMenuItem.Name = "WhiteDefaultToolStripMenuItem";
+            this.WhiteDefaultToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.WhiteDefaultToolStripMenuItem.Text = "White (Default)";
+            this.WhiteDefaultToolStripMenuItem.Click += new System.EventHandler(this.whiteDefaultToolStripMenuItem_Click);
+            // 
+            // LightBlueToolStripMenuItem
+            // 
+            this.LightBlueToolStripMenuItem.Name = "LightBlueToolStripMenuItem";
+            this.LightBlueToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.LightBlueToolStripMenuItem.Text = "Light Blue";
+            this.LightBlueToolStripMenuItem.Click += new System.EventHandler(this.lightBlueToolStripMenuItem_Click);
+            // 
+            // LightYellowToolStripMenuItem
+            // 
+            this.LightYellowToolStripMenuItem.Name = "LightYellowToolStripMenuItem";
+            this.LightYellowToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.LightYellowToolStripMenuItem.Text = "Light Yellow";
+            this.LightYellowToolStripMenuItem.Click += new System.EventHandler(this.lightYellowToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Snow;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(815, 617);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ClearButton);
@@ -649,6 +677,9 @@
         private System.Windows.Forms.ToolStripMenuItem FontSize2;
         private System.Windows.Forms.ToolStripMenuItem FontSize12;
         private System.Windows.Forms.ToolStripMenuItem FontSize16;
+        private System.Windows.Forms.ToolStripMenuItem WhiteDefaultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LightBlueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LightYellowToolStripMenuItem;
     }
 }
 
