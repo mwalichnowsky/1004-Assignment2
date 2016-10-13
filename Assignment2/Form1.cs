@@ -507,8 +507,23 @@ namespace Assignment2
                 }
             public void Exit()
             {
+                // This determines the error string.
+                String MessageString = "";
+                if (Language == "English")
+                {
+                    MessageString = "Are you sure you want to exit?";
+                }
+                else if (Language == "French")
+                {
+                    MessageString = "Êtes-vous sûr de vouloir quitter?";
+                }
+                else if (Language == "Spanish")
+                {
+                    MessageString = "Seguro que quieres salir?";
+                }
+
                 /* Determines whether the user wants to exit the application and exits if user answers yes. */
-                if (MessageBox.Show("Exit application?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(MessageString, "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.Exit();
                 }

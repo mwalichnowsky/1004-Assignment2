@@ -231,7 +231,7 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
             this.Menu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.Menu.Size = new System.Drawing.Size(815, 25);
+            this.Menu.Size = new System.Drawing.Size(888, 25);
             this.Menu.TabIndex = 15;
             this.Menu.Text = "Menu";
             // 
@@ -402,7 +402,7 @@
             this.AdditionalItemsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdditionalItemsGroupBox.Name = "AdditionalItemsGroupBox";
             this.AdditionalItemsGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(280, 248);
+            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(334, 248);
             this.AdditionalItemsGroupBox.TabIndex = 16;
             this.AdditionalItemsGroupBox.TabStop = false;
             this.AdditionalItemsGroupBox.Text = "Additional Items";
@@ -485,7 +485,7 @@
             this.ExteriorFinishBox.Margin = new System.Windows.Forms.Padding(4);
             this.ExteriorFinishBox.Name = "ExteriorFinishBox";
             this.ExteriorFinishBox.Padding = new System.Windows.Forms.Padding(4);
-            this.ExteriorFinishBox.Size = new System.Drawing.Size(280, 151);
+            this.ExteriorFinishBox.Size = new System.Drawing.Size(334, 151);
             this.ExteriorFinishBox.TabIndex = 17;
             this.ExteriorFinishBox.TabStop = false;
             this.ExteriorFinishBox.Text = "Exterior Finish";
@@ -543,7 +543,7 @@
             // ClearButton
             // 
             this.ClearButton.BackColor = System.Drawing.Color.Yellow;
-            this.ClearButton.Location = new System.Drawing.Point(342, 558);
+            this.ClearButton.Location = new System.Drawing.Point(397, 558);
             this.ClearButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(112, 36);
@@ -555,7 +555,7 @@
             // ExitButton
             // 
             this.ExitButton.BackColor = System.Drawing.Color.Red;
-            this.ExitButton.Location = new System.Drawing.Point(619, 558);
+            this.ExitButton.Location = new System.Drawing.Point(724, 558);
             this.ExitButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(112, 36);
@@ -590,7 +590,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(815, 617);
+            this.ClientSize = new System.Drawing.Size(888, 617);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
