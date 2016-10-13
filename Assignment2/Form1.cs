@@ -72,6 +72,9 @@ namespace Assignment2
                 LanguageToolStripMenuItem.Text = "Language";
                 HelpToolStripMenuItem.Text = "Help";
                 AboutToolStripMenuItem.Text = "About";
+                EnglishDefaultToolStripMenuItem.Text = "English";
+                FrenchToolStripMenuItem.Text = "French";
+                SpanishToolStripMenuItem.Text = "Spanish";
 
                 // Update additional options labels. 
                 AdditionalItemsGroupBox.Text = "Additional Items";
@@ -96,13 +99,13 @@ namespace Assignment2
             Language = "French";
 
             // Update labels.
-            BasePriceLabel.Text = "Prix ​​de base";
-            AdditionalOptionsLabel.Text = "Options additionelles";
+            BasePriceLabel.Text = "Prix ​​de Base";
+            AdditionalOptionsLabel.Text = "Options Additionelles";
             SubTotalLabel.Text = "Sub Total";
             SalesTaxLabel.Text = "Sous-Total";
             TotalLabel.Text = "Total";
-            TradeInAllowanceLabel.Text = "Dans le commerce Allocation";
-            AmountDueLabel.Text = "Montant dû";
+            TradeInAllowanceLabel.Text = "Dans le Commerce Allocation";
+            AmountDueLabel.Text = "Montant Dû";
 
             // Update buttons text.
             CalculateButton.Text = "Calculer";
@@ -118,26 +121,29 @@ namespace Assignment2
             EditToolStripMenuItem.Text = "Modifier";
             CalculateToolStripMenuItem.Text = "Calculer";
             ClearToolStripMenuItem.Text = "Clair";
-            FontToolStripMenuItem.Text = "Police de caractère";
+            FontToolStripMenuItem.Text = "Police de Caractère";
             ColourToolStripMenuItem.Text = "Couleur";
-            LanguageToolStripMenuItem.Text = "La langue";
-            HelpToolStripMenuItem.Text = "Aidez - moi";
+            LanguageToolStripMenuItem.Text = "La Langue";
+            HelpToolStripMenuItem.Text = "Aidez - Moi";
             AboutToolStripMenuItem.Text = "Sur";
+            EnglishDefaultToolStripMenuItem.Text = "Anglais";
+            FrenchToolStripMenuItem.Text = "Français";
+            SpanishToolStripMenuItem.Text = "Espanol";
 
             // Update additional options labels. 
-            AdditionalItemsGroupBox.Text = "Additional Items";
-            StereoSystemCheckBox.Text = "Stereo System";
-            LeatherInteriorCheckBox.Text = "Leather Interior";
-            ComputerNavigationCheckBox.Text = "Computer Navigation";
-            PerformancePackageCheckBox.Text = "Performance Package";
-            SunRoofCheckBox.Text = "Sun Roof";
-            ExtendedWarrantyCheckBox.Text = "Extended Warranty";
+            AdditionalItemsGroupBox.Text = "Des Éléments supplémentaires";
+            StereoSystemCheckBox.Text = "Système stéréo";
+            LeatherInteriorCheckBox.Text = "Intérieur en cuir";
+            ComputerNavigationCheckBox.Text = "Ordinateur de Navigation";
+            PerformancePackageCheckBox.Text = "Performance Paquet";
+            SunRoofCheckBox.Text = "Toit Ouvrant";
+            ExtendedWarrantyCheckBox.Text = "Garantie Prolongée";
 
             // Update Exterior Finish labels.
-            ExteriorFinishBox.Text = "Exterior Finish";
+            ExteriorFinishBox.Text = "Finition Extérieure";
             StandardRadioButton.Text = "Standard";
             PearlizedRadioButton.Text = "Pearlized";
-            CustomDetailingRadioButton.Text = "Custom Detailing";
+            CustomDetailingRadioButton.Text = "Détailler Personnalisé";
         }
 
         // Spanish
@@ -147,7 +153,52 @@ namespace Assignment2
                 Language = "Spanish";
 
                 // Update labels.
-            }
+                BasePriceLabel.Text = "Precio Base";
+                AdditionalOptionsLabel.Text = "Opciones Adicionales";
+                SubTotalLabel.Text = "Sub Total";
+                SalesTaxLabel.Text = "Sales Tax";
+                TotalLabel.Text = "Impuesto de venta";
+                TradeInAllowanceLabel.Text = "En el Comercio - Asignación";
+                AmountDueLabel.Text = "Monto a Pagar";
+
+                // Update buttons text.
+                CalculateButton.Text = "Calcular";
+                ClearButton.Text = "Claro";
+                ExitButton.Text = "Salida";
+
+                // Update menu links.
+                MenuToolStripMenuItem.Text = "Archivo";
+                NewToolStripMenuItem.Text = "Nuevo";
+                SaveToolStripMenuItem.Text = "Salvar";
+                PrintToolStripMenuItem.Text = "Impresión";
+                ExitToolStripMenuItem.Text = "Salida";
+                EditToolStripMenuItem.Text = "Editar";
+                CalculateToolStripMenuItem.Text = "Calcular";
+                ClearToolStripMenuItem.Text = "Claro";
+                FontToolStripMenuItem.Text = "Fuente";
+                ColourToolStripMenuItem.Text = "Color";
+                LanguageToolStripMenuItem.Text = "Idioma";
+                HelpToolStripMenuItem.Text = "Ayuda";
+                AboutToolStripMenuItem.Text = "Acerca de";
+                EnglishDefaultToolStripMenuItem.Text = "Inglés";
+                FrenchToolStripMenuItem.Text = "Francés";
+                SpanishToolStripMenuItem.Text = "Español";
+
+                // Update additional options labels. 
+                AdditionalItemsGroupBox.Text = "Artículos Adicionales";
+                StereoSystemCheckBox.Text = "Sistema Estéreo";
+                LeatherInteriorCheckBox.Text = "Interior de Cuero";
+                ComputerNavigationCheckBox.Text = "Ordenador de Navegación";
+                PerformancePackageCheckBox.Text = "Paquete de Alto Rendimiento";
+                SunRoofCheckBox.Text = "Sun Roof";
+                ExtendedWarrantyCheckBox.Text = "Garantía Extendida";
+
+                // Update Exterior Finish labels.
+                ExteriorFinishBox.Text = "Acabado Exterior";
+                StandardRadioButton.Text = "Estándar";
+                PearlizedRadioButton.Text = "Perlado";
+                CustomDetailingRadioButton.Text = "Detallando Personalizada";
+        }
         /* -------- End of Language -------------------------------------------------- */
 
 

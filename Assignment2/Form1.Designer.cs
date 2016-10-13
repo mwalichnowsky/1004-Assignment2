@@ -163,9 +163,9 @@
             this.SubTotalLabel.Location = new System.Drawing.Point(43, 194);
             this.SubTotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SubTotalLabel.Name = "SubTotalLabel";
-            this.SubTotalLabel.Size = new System.Drawing.Size(73, 20);
+            this.SubTotalLabel.Size = new System.Drawing.Size(77, 20);
             this.SubTotalLabel.TabIndex = 9;
-            this.SubTotalLabel.Text = "SubTotal";
+            this.SubTotalLabel.Text = "Sub Total";
             // 
             // SalesTaxLabel
             // 
@@ -362,11 +362,11 @@
             this.AdditionalItemsGroupBox.Controls.Add(this.ComputerNavigationCheckBox);
             this.AdditionalItemsGroupBox.Controls.Add(this.LeatherInteriorCheckBox);
             this.AdditionalItemsGroupBox.Controls.Add(this.StereoSystemCheckBox);
-            this.AdditionalItemsGroupBox.Location = new System.Drawing.Point(500, 69);
+            this.AdditionalItemsGroupBox.Location = new System.Drawing.Point(466, 69);
             this.AdditionalItemsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdditionalItemsGroupBox.Name = "AdditionalItemsGroupBox";
             this.AdditionalItemsGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(231, 233);
+            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(265, 248);
             this.AdditionalItemsGroupBox.TabIndex = 16;
             this.AdditionalItemsGroupBox.TabStop = false;
             this.AdditionalItemsGroupBox.Text = "Additional Items";
@@ -374,7 +374,7 @@
             // ExtendedWarrantyCheckBox
             // 
             this.ExtendedWarrantyCheckBox.AutoSize = true;
-            this.ExtendedWarrantyCheckBox.Location = new System.Drawing.Point(36, 185);
+            this.ExtendedWarrantyCheckBox.Location = new System.Drawing.Point(36, 206);
             this.ExtendedWarrantyCheckBox.Name = "ExtendedWarrantyCheckBox";
             this.ExtendedWarrantyCheckBox.Size = new System.Drawing.Size(164, 24);
             this.ExtendedWarrantyCheckBox.TabIndex = 5;
@@ -385,7 +385,7 @@
             // SunRoofCheckBox
             // 
             this.SunRoofCheckBox.AutoSize = true;
-            this.SunRoofCheckBox.Location = new System.Drawing.Point(36, 154);
+            this.SunRoofCheckBox.Location = new System.Drawing.Point(36, 176);
             this.SunRoofCheckBox.Name = "SunRoofCheckBox";
             this.SunRoofCheckBox.Size = new System.Drawing.Size(96, 24);
             this.SunRoofCheckBox.TabIndex = 4;
@@ -396,7 +396,7 @@
             // PerformancePackageCheckBox
             // 
             this.PerformancePackageCheckBox.AutoSize = true;
-            this.PerformancePackageCheckBox.Location = new System.Drawing.Point(36, 124);
+            this.PerformancePackageCheckBox.Location = new System.Drawing.Point(36, 146);
             this.PerformancePackageCheckBox.Name = "PerformancePackageCheckBox";
             this.PerformancePackageCheckBox.Size = new System.Drawing.Size(185, 24);
             this.PerformancePackageCheckBox.TabIndex = 3;
@@ -407,7 +407,7 @@
             // ComputerNavigationCheckBox
             // 
             this.ComputerNavigationCheckBox.AutoSize = true;
-            this.ComputerNavigationCheckBox.Location = new System.Drawing.Point(36, 93);
+            this.ComputerNavigationCheckBox.Location = new System.Drawing.Point(36, 115);
             this.ComputerNavigationCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.ComputerNavigationCheckBox.Name = "ComputerNavigationCheckBox";
             this.ComputerNavigationCheckBox.Size = new System.Drawing.Size(176, 24);
@@ -419,7 +419,7 @@
             // LeatherInteriorCheckBox
             // 
             this.LeatherInteriorCheckBox.AutoSize = true;
-            this.LeatherInteriorCheckBox.Location = new System.Drawing.Point(36, 61);
+            this.LeatherInteriorCheckBox.Location = new System.Drawing.Point(36, 83);
             this.LeatherInteriorCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.LeatherInteriorCheckBox.Name = "LeatherInteriorCheckBox";
             this.LeatherInteriorCheckBox.Size = new System.Drawing.Size(137, 24);
@@ -431,7 +431,7 @@
             // StereoSystemCheckBox
             // 
             this.StereoSystemCheckBox.AutoSize = true;
-            this.StereoSystemCheckBox.Location = new System.Drawing.Point(36, 29);
+            this.StereoSystemCheckBox.Location = new System.Drawing.Point(36, 51);
             this.StereoSystemCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.StereoSystemCheckBox.Name = "StereoSystemCheckBox";
             this.StereoSystemCheckBox.Size = new System.Drawing.Size(133, 24);
@@ -445,11 +445,11 @@
             this.ExteriorFinishBox.Controls.Add(this.CustomDetailingRadioButton);
             this.ExteriorFinishBox.Controls.Add(this.PearlizedRadioButton);
             this.ExteriorFinishBox.Controls.Add(this.StandardRadioButton);
-            this.ExteriorFinishBox.Location = new System.Drawing.Point(500, 335);
+            this.ExteriorFinishBox.Location = new System.Drawing.Point(466, 331);
             this.ExteriorFinishBox.Margin = new System.Windows.Forms.Padding(4);
             this.ExteriorFinishBox.Name = "ExteriorFinishBox";
             this.ExteriorFinishBox.Padding = new System.Windows.Forms.Padding(4);
-            this.ExteriorFinishBox.Size = new System.Drawing.Size(231, 151);
+            this.ExteriorFinishBox.Size = new System.Drawing.Size(265, 151);
             this.ExteriorFinishBox.TabIndex = 17;
             this.ExteriorFinishBox.TabStop = false;
             this.ExteriorFinishBox.Text = "Exterior Finish";
@@ -457,7 +457,7 @@
             // CustomDetailingRadioButton
             // 
             this.CustomDetailingRadioButton.AutoSize = true;
-            this.CustomDetailingRadioButton.Location = new System.Drawing.Point(36, 103);
+            this.CustomDetailingRadioButton.Location = new System.Drawing.Point(36, 110);
             this.CustomDetailingRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.CustomDetailingRadioButton.Name = "CustomDetailingRadioButton";
             this.CustomDetailingRadioButton.Size = new System.Drawing.Size(148, 24);
@@ -469,7 +469,7 @@
             // PearlizedRadioButton
             // 
             this.PearlizedRadioButton.AutoSize = true;
-            this.PearlizedRadioButton.Location = new System.Drawing.Point(36, 68);
+            this.PearlizedRadioButton.Location = new System.Drawing.Point(36, 78);
             this.PearlizedRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.PearlizedRadioButton.Name = "PearlizedRadioButton";
             this.PearlizedRadioButton.Size = new System.Drawing.Size(92, 24);
@@ -482,7 +482,7 @@
             // 
             this.StandardRadioButton.AutoSize = true;
             this.StandardRadioButton.Checked = true;
-            this.StandardRadioButton.Location = new System.Drawing.Point(36, 32);
+            this.StandardRadioButton.Location = new System.Drawing.Point(35, 46);
             this.StandardRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.StandardRadioButton.Name = "StandardRadioButton";
             this.StandardRadioButton.Size = new System.Drawing.Size(93, 24);
