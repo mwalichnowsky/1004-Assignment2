@@ -1,6 +1,6 @@
 ﻿namespace Assignment2
 {
-    partial class Form1
+    partial class SharpAutoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -96,7 +96,6 @@
             this.BasePriceLabel.Size = new System.Drawing.Size(74, 19);
             this.BasePriceLabel.TabIndex = 0;
             this.BasePriceLabel.Text = "Base Price";
-            this.BasePriceLabel.Click += new System.EventHandler(this.BasePriceLabel_Click);
             // 
             // TradeInAllowanceLabel
             // 
@@ -136,7 +135,6 @@
             this.AdditionalOptionsTextbox.Size = new System.Drawing.Size(148, 26);
             this.AdditionalOptionsTextbox.TabIndex = 5;
             this.AdditionalOptionsTextbox.Text = "0";
-            this.AdditionalOptionsTextbox.TextChanged += new System.EventHandler(this.AdditionalOptionsTextbox_TextChanged);
             // 
             // SubTotalTextbox
             // 
@@ -165,7 +163,6 @@
             this.AdditionalOptionsLabel.Size = new System.Drawing.Size(123, 19);
             this.AdditionalOptionsLabel.TabIndex = 8;
             this.AdditionalOptionsLabel.Text = "Additional Options";
-            this.AdditionalOptionsLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // SubTotalLabel
             // 
@@ -224,7 +221,6 @@
             this.AmountDueTextbox.ReadOnly = true;
             this.AmountDueTextbox.Size = new System.Drawing.Size(148, 26);
             this.AmountDueTextbox.TabIndex = 14;
-            this.AmountDueTextbox.TextChanged += new System.EventHandler(this.AmountDueTextbox_TextChanged);
             // 
             // Menu
             // 
@@ -246,13 +242,12 @@
             this.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem";
             this.MenuToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.MenuToolStripMenuItem.Text = "File";
-            this.MenuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.ExitToolStripMenuItem.Text = "Exit";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExitToolStripMenuItem.Text = "Exit (E)";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
@@ -271,15 +266,15 @@
             // CalculateToolStripMenuItem
             // 
             this.CalculateToolStripMenuItem.Name = "CalculateToolStripMenuItem";
-            this.CalculateToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.CalculateToolStripMenuItem.Text = "Calculate";
+            this.CalculateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.CalculateToolStripMenuItem.Text = "Calculate (C)";
             this.CalculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
             // 
             // ClearToolStripMenuItem
             // 
             this.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem";
-            this.ClearToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.ClearToolStripMenuItem.Text = "Clear";
+            this.ClearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ClearToolStripMenuItem.Text = "Clear (R)";
             this.ClearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // FontToolStripMenuItem
@@ -291,7 +286,6 @@
             this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
             this.FontToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.FontToolStripMenuItem.Text = "Font Size";
-            this.FontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // FontSize2
             // 
@@ -354,7 +348,6 @@
             this.ColourToolStripMenuItem.Name = "ColourToolStripMenuItem";
             this.ColourToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.ColourToolStripMenuItem.Text = "Colour";
-            this.ColourToolStripMenuItem.Click += new System.EventHandler(this.colourToolStripMenuItem_Click);
             // 
             // WhiteDefaultToolStripMenuItem
             // 
@@ -419,8 +412,8 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.AboutToolStripMenuItem.Text = "About";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.AboutToolStripMenuItem.Text = "About (A)";
             this.AboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
             // AdditionalItemsGroupBox
@@ -559,7 +552,6 @@
             this.StandardRadioButton.TabStop = true;
             this.StandardRadioButton.Text = "Standard";
             this.StandardRadioButton.UseVisualStyleBackColor = true;
-            this.StandardRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // CalculateButton
             // 
@@ -569,7 +561,7 @@
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(112, 36);
             this.CalculateButton.TabIndex = 18;
-            this.CalculateButton.Text = "Calculate";
+            this.CalculateButton.Text = "Calculate (C)";
             this.CalculateButton.UseVisualStyleBackColor = false;
             this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
@@ -581,7 +573,7 @@
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(112, 36);
             this.ClearButton.TabIndex = 19;
-            this.ClearButton.Text = "Clear";
+            this.ClearButton.Text = "Clear (R)";
             this.ClearButton.UseVisualStyleBackColor = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
@@ -593,7 +585,7 @@
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(112, 36);
             this.ExitButton.TabIndex = 20;
-            this.ExitButton.Text = "Exit";
+            this.ExitButton.Text = "Exit (E)";
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
@@ -615,7 +607,7 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "$";
             // 
-            // Form1
+            // SharpAutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -646,7 +638,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.Menu;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "SharpAutoForm";
             this.Text = "Sharp Auto Center";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Menu.ResumeLayout(false);

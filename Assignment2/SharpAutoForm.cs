@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
-    public partial class Form1 : Form
+    public partial class SharpAutoForm : Form
     {
         // Variables
         private String _Language = "English";
@@ -29,18 +29,13 @@ namespace Assignment2
         private String _FontStyle = "Times New Roman";
         private int _FontSize = 12;
 
-
-            /* -------- Labels ----------------------------------------------------------- */
-            private void label1_Click(object sender, EventArgs e)
-            {
-
-            }
-            private void BasePriceLabel_Click(object sender, EventArgs e)
-            {
-
-            }
-        /* -------- End of Labels ---------------------------------------------------- */
-
+        public SharpAutoForm()
+        {
+            KeyPreview = true;
+            InitializeComponent();
+            // Inializes the KeyEventHandler to look for key combos set in this application.
+            KeyDown += new KeyEventHandler(FormKeyDown);
+        }
 
         /* -------- _Language --------------------------------------------------------- */
             // English
@@ -250,77 +245,56 @@ namespace Assignment2
                 Clear();
             }
 
-            // Edit / Font Size
-            private void fontToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-
-            }
-
-            // Edit / Colour
-            private void colourToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-
-            }
-
             // Help / About
             private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
             {
-                try
-                {
-                    if (_Language == "English")
-                    {
-                        MessageBox.Show("This program calculates the amount due on a New or Used Vehicle.");
-                    }
-                    else if (_Language == "French")
-                    {
-                        MessageBox.Show("Ce programme calcule le montant dû sur un véhicule neuf ou d'occasion.");
-                    }
-                    else if (_Language == "Spanish")
-                    {
-                        MessageBox.Show("Este programa calcula la cantidad debida en un vehículo nuevo o usado.");
-                    }
-                }
-                catch
-                {
-                    MessageBox.Show("There was an error selecting your language.");
-                }            
+                About();
             }
         /* -------- End of Menu ------------------------------------------------------ */
 
         /* ---==---- Change Font --------------------------------===---------------------- */
+            // Changes font size to 16.
             private void FontSize16_Click(object sender, EventArgs e)
             {
                 _FontSize = 16;
                 ChangeFont(_FontStyle, _FontSize);
             }
+
+            // Changes font size to 12.
             private void FontSize12_Click(object sender, EventArgs e)
             {
                 _FontSize = 12;
                 ChangeFont(_FontStyle, _FontSize);
             }
+
+            // Changes font size to 8.
             private void FontSize2_Click(object sender, EventArgs e)
             {
                 _FontSize = 8;
                 ChangeFont(_FontStyle, _FontSize);
             }
-            // Times New Roman font style.
+
+            // Changes font style to Times New Roman.
             private void TimesNewRomanToolStripMenuItem_Click(object sender, EventArgs e)
             {
                 _FontStyle = "Times New Roman";
                 ChangeFont(_FontStyle, _FontSize);
             }
-            // Calibri font style.
+
+            // Changes font style to Calibri.
             private void CalibriToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                _FontStyle = "Calibri";
-                ChangeFont(_FontStyle, _FontSize);
-            }
-            // Arial font style.
+                {
+                    _FontStyle = "Calibri";
+                    ChangeFont(_FontStyle, _FontSize);
+                }
+
+            // Changes font style to Arial.
             private void ArialToolStripMenuItem_Click(object sender, EventArgs e)
             {
                 _FontStyle = "Arial";
                 ChangeFont(_FontStyle, _FontSize);
             }
+
             // This method changes all the font on the page to the variables set beforehand.
             public void ChangeFont(String _FontStyle, int _FontSize)
                 {
@@ -368,7 +342,7 @@ namespace Assignment2
                     PearlizedRadioButton.Font = new Font(_FontStyle, _FontSize);
                     CustomDetailingRadioButton.Font = new Font(_FontStyle, _FontSize);
                 }
-        /* ---==---- End Font Size --------------------------------===------------------ */
+        /* ---==---- End Change Font --------------------------------===------------------ */
 
         /* ---==---- Change Colour --------------------------------===------------------ */
             // White
@@ -558,6 +532,7 @@ namespace Assignment2
                     }
                 } // End of catch.     
             } // End of Calculate method.
+
             // This method clears everything on the form and sets variables (other than style) to default.
             public void Clear()
                 {
@@ -584,6 +559,7 @@ namespace Assignment2
                         MessageBox.Show("There was an error clearing the form.");
                     }
                 }
+
             // This method askes you if you want to exit. If yes, exits the program. If no, does nothing.
             public void Exit()
             {
@@ -608,6 +584,31 @@ namespace Assignment2
                     Application.Exit();
                 }
             }
+
+            // This method opens the about message.
+            public void About()
+            {
+                try
+                {
+                    if (_Language == "English")
+                    {
+                        MessageBox.Show("This program calculates the amount due on a New or Used Vehicle.");
+                    }
+                    else if (_Language == "French")
+                    {
+                        MessageBox.Show("Ce programme calcule le montant dû sur un véhicule neuf ou d'occasion.");
+                    }
+                    else if (_Language == "Spanish")
+                    {
+                        MessageBox.Show("Este programa calcula la cantidad debida en un vehículo nuevo o usado.");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("There was an error selecting your language.");
+                }
+            }
+
             // This method calculates the additional options that the calculate method uses after.
             public void CalculateAdditionalOptions()
             {
@@ -648,9 +649,32 @@ namespace Assignment2
                 }
                 AdditionalOptionsTextbox.Text = String.Format("{0:C}", _AdditonalOptions);
             }
+
+            // This method handles the shortcuts for the form.
+            private void FormKeyDown(object sender, KeyEventArgs InputKey)
+            {
+                // These statements looks for a combination of the control key and the key inserted.
+                if (InputKey.Control && InputKey.KeyCode == Keys.E)
+                {
+                    Exit();
+                }
+                if (InputKey.Control && InputKey.KeyCode == Keys.C)
+                {
+                    Calculate();
+                }
+                if (InputKey.Control && InputKey.KeyCode == Keys.R)
+                {
+                    Clear();
+                }
+                if (InputKey.Control && InputKey.KeyCode == Keys.A)
+                {
+                    About();
+                }
+        }
         /* ----=---- End of Methods ------------------------------------------------------ */
 
         /* --------- Additional Options Active Pricing ------------------------------------------------ */
+            // If any checkbox is changed, update the new pricing for additonal options.
             private void StereoSystemCheckBox_CheckedChanged(object sender, EventArgs e)
             {
                 // Update additional options box.
@@ -693,27 +717,6 @@ namespace Assignment2
             }
         /* -------- End of Additional Options Active Pricing ------------------------------------------ */
 
-
-        private void AdditionalOptionsTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        public Form1()
-        {
-            InitializeComponent();
-        }
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void AmountDueTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
