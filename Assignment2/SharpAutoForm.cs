@@ -28,6 +28,7 @@ namespace Assignment2
         private Boolean _IsValid;
         private String _FontStyle = "Times New Roman";
         private int _FontSize = 12;
+        private Color _FontColour = Color.Black;
 
         public SharpAutoForm()
         {
@@ -345,193 +346,276 @@ namespace Assignment2
         /* ---==---- End Change Font --------------------------------===------------------ */
 
         /* ---==---- Change Colour --------------------------------===------------------ */
-            // White
+            // Form White
             private void whiteDefaultToolStripMenuItem_Click(object sender, EventArgs e)
             {
                 this.BackColor = System.Drawing.Color.White;
             }
 
-            // Light Blue
+            // Form Light Blue
             private void lightBlueToolStripMenuItem_Click(object sender, EventArgs e)
             {
                 this.BackColor = System.Drawing.Color.LightBlue;
             }
 
-            // Light Yellow
+            // Form Light Yellow
             private void lightYellowToolStripMenuItem_Click(object sender, EventArgs e)
             {
                 this.BackColor = System.Drawing.Color.LightYellow;
+            }
+
+            // Text Black (Default)
+            private void BlackDefaultToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                _FontColour = Color.Black;
+                ChangeColourFont();
+            }
+
+            // Text Dark Blue
+            private void DarkBlueToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                _FontColour = Color.DarkBlue;
+                ChangeColourFont();
+            }
+
+            // Text Dark Orange
+            private void DarkOrangeToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                _FontColour = Color.DarkOrange;
+                ChangeColourFont();
+            }
+
+            // This method changes the text colour of everything except text boxes.
+            public void ChangeColourFont()
+            {
+                // Update Labels.
+                BasePriceLabel.ForeColor = _FontColour;
+                AdditionalOptionsLabel.ForeColor = _FontColour;
+                SubTotalLabel.ForeColor = _FontColour;
+                SalesTaxLabel.ForeColor = _FontColour;
+                TotalLabel.ForeColor = _FontColour;
+                TradeInAllowanceLabel.ForeColor = _FontColour;
+                AmountDueLabel.ForeColor = _FontColour;
+
+                // Update buttons text.
+                CalculateButton.ForeColor = _FontColour;
+                ClearButton.ForeColor = _FontColour;
+                ExitButton.ForeColor = _FontColour;
+
+                // Update menu links.
+                MenuToolStripMenuItem.ForeColor = _FontColour;
+                ExitToolStripMenuItem.ForeColor = _FontColour;
+                EditToolStripMenuItem.ForeColor = _FontColour;
+                CalculateToolStripMenuItem.ForeColor = _FontColour;
+                ClearToolStripMenuItem.ForeColor = _FontColour;
+                FontToolStripMenuItem.ForeColor = _FontColour;
+                FontTypeToolStripMenuItem.ForeColor = _FontColour;
+                TimesNewRomanToolStripMenuItem.ForeColor = _FontColour;
+                CalibriToolStripMenuItem.ForeColor = _FontColour;
+                ArialToolStripMenuItem.ForeColor = _FontColour;
+                FontSize8.ForeColor = _FontColour;
+                FontSize12.ForeColor = _FontColour;
+                FontSize16.ForeColor = _FontColour;
+                TextColourToolStripMenuItem.ForeColor = _FontColour;
+                BlackDefaultToolStripMenuItem.ForeColor = _FontColour;
+                DarkBlueToolStripMenuItem.ForeColor = _FontColour;
+                DarkOrangeToolStripMenuItem.ForeColor = _FontColour;
+                ColourToolStripMenuItem.ForeColor = _FontColour;
+                WhiteDefaultToolStripMenuItem.ForeColor = _FontColour;
+                LightBlueToolStripMenuItem.ForeColor = _FontColour;
+                LightYellowToolStripMenuItem.ForeColor = _FontColour;
+                LanguageToolStripMenuItem.ForeColor = _FontColour;
+                HelpToolStripMenuItem.ForeColor = _FontColour;
+                AboutToolStripMenuItem.ForeColor = _FontColour;
+                EnglishDefaultToolStripMenuItem.ForeColor = _FontColour;
+                FrenchToolStripMenuItem.ForeColor = _FontColour;
+                SpanishToolStripMenuItem.ForeColor = _FontColour;
+
+                // Update additional options labels. 
+                AdditionalItemsGroupBox.ForeColor = _FontColour;
+                StereoSystemCheckBox.ForeColor = _FontColour;
+                LeatherInteriorCheckBox.ForeColor = _FontColour;
+                ComputerNavigationCheckBox.ForeColor = _FontColour;
+                PerformancePackageCheckBox.ForeColor = _FontColour;
+                SunRoofCheckBox.ForeColor = _FontColour;
+                ExtendedWarrantyCheckBox.ForeColor = _FontColour;
+
+                // Update Exterior Finish labels.
+                ExteriorFinishBox.ForeColor = _FontColour;
+                StandardRadioButton.ForeColor = _FontColour;
+                PearlizedRadioButton.ForeColor = _FontColour;
+                CustomDetailingRadioButton.ForeColor = _FontColour;
             }
         /* ---==---- End of Change Colour --------------------------------===--------- */
 
         /* ---==---- Methods --------------------------------===---------------------- */
             // This method calculates all variables.
             private void Calculate()
-            {
-                _IsValid = true;
-                try
                 {
-                    // Try converting to double.
+                    _IsValid = true;
                     try
                     {
-                        _BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
+                        // Try converting to double.
+                        try
+                        {
+                            _BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
+                        }
+                        catch
+                        {
+                            _IsValid = false;
+                            if (_Language == "English")
+                            {
+                                MessageBox.Show(":( Base price has an invalid input.");
+                            }
+                            else if (_Language == "French")
+                            {
+                                MessageBox.Show(":( Prix ​​de base a une entrée non valide.");
+                            }
+                            else if (_Language == "Spanish")
+                            {
+                                MessageBox.Show(":( Precio base tiene una entrada no válida.");
+                            }
+                        }
+                        // Checks if negative base price was entered.
+                        if (_BasePrice < 0)
+                        {
+                            _IsValid = false;
+                            if (_Language == "English")
+                            {
+                                MessageBox.Show(":( Base price must be greater than 0.");
+                            }
+                            else if (_Language == "French")
+                            {
+                                MessageBox.Show(":( Prix ​​de base doit être supérieur à 0.");
+                            }
+                            else if (_Language == "Spanish")
+                            {
+                                MessageBox.Show(":( Precio base debe ser mayor que 0.");
+                            }
+                        }
+                        // Checks that base price is less than 3,000,000.
+                        else if (_BasePrice > 3000000)
+                        {
+                            _IsValid = false;
+                            if (_Language == "English")
+                            {
+                                MessageBox.Show(":( Base price must be less than 3,000,000.");
+                            }
+                            else if (_Language == "French")
+                            {
+                                MessageBox.Show(":( Prix ​​de base doit être inférieure à 3,000,000.");
+                            }
+                            else if (_Language == "Spanish")
+                            {
+                                MessageBox.Show(":( Precio base debe ser inferior a 3,000,000.");
+                            }
+                        }
+
+                        // Try converting to double.
+                        try
+                        {
+                            _TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
+                        }
+                        catch
+                        {
+                            _IsValid = false;
+                            if (_Language == "English")
+                            {
+                                MessageBox.Show(":( Trade in allowance has an invalid input.");
+                            }
+                            else if (_Language == "French")
+                            {
+                                MessageBox.Show(":( Commerce de l'allocation a une entrée non valide.");
+                            }
+                            else if (_Language == "Spanish")
+                            {
+                                MessageBox.Show(":( El comercio de asignación tiene una entrada no válida.");
+                            }
+                        }
+                        // Check if negative trade in amount is used and show a message.
+                        if (_TradeInAllowance < 0)
+                        {
+                            _IsValid = false;
+                            if (_Language == "English")
+                            {
+                                MessageBox.Show(":( Trade-In Allowance must be greater than 0.");
+                            }
+                            else if (_Language == "French")
+                            {
+                                MessageBox.Show(":( Trade - In allocation doit être supérieure à 0.");
+                            }
+                            else if (_Language == "Spanish")
+                            {
+                                MessageBox.Show(":( En el comercio Asignación debe ser mayor que 0.");
+                            }
+                        }
+                        // Checks if a large trade in was used.
+                        if (_TradeInAllowance > 3000000)
+                        {
+                            _IsValid = false;
+                            if (_Language == "English")
+                            {
+                                MessageBox.Show(":( Trade-In Allowance must be less than 3,000,000.");
+                            }
+                            else if (_Language == "French")
+                            {
+                                MessageBox.Show(":( Trade-In allocation doit être inférieur à 3,000,000.");
+                            }
+                            else if (_Language == "Spanish")
+                            {
+                                MessageBox.Show(":( En el comercio Asignación debe ser inferior a 3,000,000.");
+                            }
+                        } // End of else if.
+
+                        // If user enters valid inputs, do below code. Else do nothing.
+                        if (_IsValid == true)
+                        {
+                            // Round BasePrice and TradeInAllowance then submit it back into form.
+                            BasePriceTextbox.Text = Math.Round(_BasePrice, 2).ToString();
+                            TradeInAllowanceTextbox.Text = Math.Round(_TradeInAllowance, 2).ToString();
+
+                            // Calculate additional options.
+                            CalculateAdditionalOptions();
+
+                            //AdditionalOptions = Convert.ToDouble(AdditionalOptionsTextbox.Text); Not needed anymore.
+                            Double Subtotal = _BasePrice + _AdditonalOptions;
+                            SubTotalTextbox.Text = String.Format("{0:C}", Subtotal);
+                            SalesTaxTextbox.Text = "13%";
+                            Double Total = Subtotal * 1.13;
+                            TotalTextbox.Text = String.Format("{0:C}", Total);
+                            Double AmountDue = Total - _TradeInAllowance;
+
+                            // Change text box colour based on amount owing.
+                            if (AmountDue > 0)
+                            {
+                                AmountDueTextbox.ForeColor = Color.Red;
+                                AmountDueTextbox.BackColor = Color.White;
+                            }
+                            else if (AmountDue < 0)
+                            {
+                                AmountDueTextbox.ForeColor = Color.Green;
+                                AmountDueTextbox.BackColor = Color.White;
+                            }
+
+                            AmountDueTextbox.Text = String.Format("{0:C}", AmountDue);
+                        } // End of try.
                     }
                     catch
                     {
-                        _IsValid = false;
                         if (_Language == "English")
                         {
-                            MessageBox.Show(":( Base price has an invalid input.");
+                            MessageBox.Show(":( General Error.");
                         }
                         else if (_Language == "French")
                         {
-                            MessageBox.Show(":( Prix ​​de base a une entrée non valide.");
+                            MessageBox.Show(":( Erreur générale.");
                         }
                         else if (_Language == "Spanish")
                         {
-                            MessageBox.Show(":( Precio base tiene una entrada no válida.");
+                            MessageBox.Show(":( Error general.");
                         }
-                    }
-                    // Checks if negative base price was entered.
-                    if (_BasePrice < 0)
-                    {
-                        _IsValid = false;
-                        if (_Language == "English")
-                        {
-                            MessageBox.Show(":( Base price must be greater than 0.");
-                        }
-                        else if (_Language == "French")
-                        {
-                            MessageBox.Show(":( Prix ​​de base doit être supérieur à 0.");
-                        }
-                        else if (_Language == "Spanish")
-                        {
-                            MessageBox.Show(":( Precio base debe ser mayor que 0.");
-                        }
-                    }
-                    // Checks that base price is less than 3,000,000.
-                    else if (_BasePrice > 3000000)
-                    {
-                        _IsValid = false;
-                        if (_Language == "English")
-                        {
-                            MessageBox.Show(":( Base price must be less than 3,000,000.");
-                        }
-                        else if (_Language == "French")
-                        {
-                            MessageBox.Show(":( Prix ​​de base doit être inférieure à 3,000,000.");
-                        }
-                        else if (_Language == "Spanish")
-                        {
-                            MessageBox.Show(":( Precio base debe ser inferior a 3,000,000.");
-                        }
-                    }
-
-                    // Try converting to double.
-                    try
-                    {
-                        _TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
-                    }
-                    catch
-                    {
-                        _IsValid = false;
-                        if (_Language == "English")
-                        {
-                            MessageBox.Show(":( Trade in allowance has an invalid input.");
-                        }
-                        else if (_Language == "French")
-                        {
-                            MessageBox.Show(":( Commerce de l'allocation a une entrée non valide.");
-                        }
-                        else if (_Language == "Spanish")
-                        {
-                            MessageBox.Show(":( El comercio de asignación tiene una entrada no válida.");
-                        }
-                    }
-                    // Check if negative trade in amount is used and show a message.
-                    if (_TradeInAllowance < 0)
-                    {
-                        _IsValid = false;
-                        if (_Language == "English")
-                        {
-                            MessageBox.Show(":( Trade-In Allowance must be greater than 0.");
-                        }
-                        else if (_Language == "French")
-                        {
-                            MessageBox.Show(":( Trade - In allocation doit être supérieure à 0.");
-                        }
-                        else if (_Language == "Spanish")
-                        {
-                            MessageBox.Show(":( En el comercio Asignación debe ser mayor que 0.");
-                        }
-                    }
-                    // Checks if a large trade in was used.
-                    if (_TradeInAllowance > 3000000)
-                    {
-                        _IsValid = false;
-                        if (_Language == "English")
-                        {
-                            MessageBox.Show(":( Trade-In Allowance must be less than 3,000,000.");
-                        }
-                        else if (_Language == "French")
-                        {
-                            MessageBox.Show(":( Trade-In allocation doit être inférieur à 3,000,000.");
-                        }
-                        else if (_Language == "Spanish")
-                        {
-                            MessageBox.Show(":( En el comercio Asignación debe ser inferior a 3,000,000.");
-                        }
-                    } // End of else if.
-
-                    // If user enters valid inputs, do below code. Else do nothing.
-                    if (_IsValid == true)
-                    {
-                        // Round BasePrice and TradeInAllowance then submit it back into form.
-                        BasePriceTextbox.Text = Math.Round(_BasePrice, 2).ToString();
-                        TradeInAllowanceTextbox.Text = Math.Round(_TradeInAllowance, 2).ToString();
-
-                        // Calculate additional options.
-                        CalculateAdditionalOptions();
-
-                        //AdditionalOptions = Convert.ToDouble(AdditionalOptionsTextbox.Text); Not needed anymore.
-                        Double Subtotal = _BasePrice + _AdditonalOptions;
-                        SubTotalTextbox.Text = String.Format("{0:C}", Subtotal);
-                        SalesTaxTextbox.Text = "13%";
-                        Double Total = Subtotal * 1.13;
-                        TotalTextbox.Text = String.Format("{0:C}", Total);
-                        Double AmountDue = Total - _TradeInAllowance;
-
-                        // Change text box colour based on amount owing.
-                        if (AmountDue > 0)
-                        {
-                            AmountDueTextbox.ForeColor = Color.Red;
-                            AmountDueTextbox.BackColor = Color.White;
-                        }
-                        else if (AmountDue < 0)
-                        {
-                            AmountDueTextbox.ForeColor = Color.Green;
-                            AmountDueTextbox.BackColor = Color.White;
-                        }
-
-                        AmountDueTextbox.Text = String.Format("{0:C}", AmountDue);
-                    } // End of try.
-                }
-                catch
-                {
-                    if (_Language == "English")
-                    {
-                        MessageBox.Show(":( General Error.");
-                    }
-                    else if (_Language == "French")
-                    {
-                        MessageBox.Show(":( Erreur générale.");
-                    }
-                    else if (_Language == "Spanish")
-                    {
-                        MessageBox.Show(":( Error general.");
-                    }
-                } // End of catch.     
-            } // End of Calculate method.
+                    } // End of catch.     
+                } // End of Calculate method.
 
             // This method clears everything on the form and sets variables (other than style) to default.
             public void Clear()
