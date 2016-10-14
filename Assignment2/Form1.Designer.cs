@@ -44,9 +44,6 @@
             this.AmountDueTextbox = new System.Windows.Forms.TextBox();
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.MenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CalculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +52,14 @@
             this.FontSize2 = new System.Windows.Forms.ToolStripMenuItem();
             this.FontSize12 = new System.Windows.Forms.ToolStripMenuItem();
             this.FontSize16 = new System.Windows.Forms.ToolStripMenuItem();
+            this.FontTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TimesNewRomanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CalibriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ArialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ColourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WhiteDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LightBlueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LightYellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LanguageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnglishDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FrenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,9 +80,8 @@
             this.CalculateButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.WhiteDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LightBlueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LightYellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.AdditionalItemsGroupBox.SuspendLayout();
             this.ExteriorFinishBox.SuspendLayout();
@@ -87,7 +90,7 @@
             // BasePriceLabel
             // 
             this.BasePriceLabel.AutoSize = true;
-            this.BasePriceLabel.Location = new System.Drawing.Point(43, 72);
+            this.BasePriceLabel.Location = new System.Drawing.Point(31, 72);
             this.BasePriceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BasePriceLabel.Name = "BasePriceLabel";
             this.BasePriceLabel.Size = new System.Drawing.Size(74, 19);
@@ -98,7 +101,7 @@
             // TradeInAllowanceLabel
             // 
             this.TradeInAllowanceLabel.AutoSize = true;
-            this.TradeInAllowanceLabel.Location = new System.Drawing.Point(43, 396);
+            this.TradeInAllowanceLabel.Location = new System.Drawing.Point(30, 396);
             this.TradeInAllowanceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TradeInAllowanceLabel.Name = "TradeInAllowanceLabel";
             this.TradeInAllowanceLabel.Size = new System.Drawing.Size(129, 19);
@@ -108,7 +111,7 @@
             // TradeInAllowanceTextbox
             // 
             this.TradeInAllowanceTextbox.ForeColor = System.Drawing.Color.Green;
-            this.TradeInAllowanceTextbox.Location = new System.Drawing.Point(321, 393);
+            this.TradeInAllowanceTextbox.Location = new System.Drawing.Point(362, 393);
             this.TradeInAllowanceTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.TradeInAllowanceTextbox.Name = "TradeInAllowanceTextbox";
             this.TradeInAllowanceTextbox.Size = new System.Drawing.Size(148, 26);
@@ -117,7 +120,7 @@
             // 
             // BasePriceTextbox
             // 
-            this.BasePriceTextbox.Location = new System.Drawing.Point(321, 69);
+            this.BasePriceTextbox.Location = new System.Drawing.Point(362, 65);
             this.BasePriceTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.BasePriceTextbox.Name = "BasePriceTextbox";
             this.BasePriceTextbox.Size = new System.Drawing.Size(148, 26);
@@ -125,7 +128,8 @@
             // 
             // AdditionalOptionsTextbox
             // 
-            this.AdditionalOptionsTextbox.Location = new System.Drawing.Point(321, 128);
+            this.AdditionalOptionsTextbox.ForeColor = System.Drawing.Color.Red;
+            this.AdditionalOptionsTextbox.Location = new System.Drawing.Point(362, 131);
             this.AdditionalOptionsTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.AdditionalOptionsTextbox.Name = "AdditionalOptionsTextbox";
             this.AdditionalOptionsTextbox.ReadOnly = true;
@@ -136,7 +140,7 @@
             // 
             // SubTotalTextbox
             // 
-            this.SubTotalTextbox.Location = new System.Drawing.Point(321, 194);
+            this.SubTotalTextbox.Location = new System.Drawing.Point(362, 194);
             this.SubTotalTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.SubTotalTextbox.Name = "SubTotalTextbox";
             this.SubTotalTextbox.ReadOnly = true;
@@ -145,7 +149,7 @@
             // 
             // SalesTaxTextbox
             // 
-            this.SalesTaxTextbox.Location = new System.Drawing.Point(321, 257);
+            this.SalesTaxTextbox.Location = new System.Drawing.Point(362, 257);
             this.SalesTaxTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.SalesTaxTextbox.Name = "SalesTaxTextbox";
             this.SalesTaxTextbox.ReadOnly = true;
@@ -155,7 +159,7 @@
             // AdditionalOptionsLabel
             // 
             this.AdditionalOptionsLabel.AutoSize = true;
-            this.AdditionalOptionsLabel.Location = new System.Drawing.Point(43, 131);
+            this.AdditionalOptionsLabel.Location = new System.Drawing.Point(31, 131);
             this.AdditionalOptionsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AdditionalOptionsLabel.Name = "AdditionalOptionsLabel";
             this.AdditionalOptionsLabel.Size = new System.Drawing.Size(123, 19);
@@ -166,7 +170,7 @@
             // SubTotalLabel
             // 
             this.SubTotalLabel.AutoSize = true;
-            this.SubTotalLabel.Location = new System.Drawing.Point(43, 194);
+            this.SubTotalLabel.Location = new System.Drawing.Point(31, 201);
             this.SubTotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SubTotalLabel.Name = "SubTotalLabel";
             this.SubTotalLabel.Size = new System.Drawing.Size(67, 19);
@@ -176,7 +180,7 @@
             // SalesTaxLabel
             // 
             this.SalesTaxLabel.AutoSize = true;
-            this.SalesTaxLabel.Location = new System.Drawing.Point(43, 257);
+            this.SalesTaxLabel.Location = new System.Drawing.Point(31, 260);
             this.SalesTaxLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SalesTaxLabel.Name = "SalesTaxLabel";
             this.SalesTaxLabel.Size = new System.Drawing.Size(67, 19);
@@ -186,7 +190,7 @@
             // TotalLabel
             // 
             this.TotalLabel.AutoSize = true;
-            this.TotalLabel.Location = new System.Drawing.Point(43, 327);
+            this.TotalLabel.Location = new System.Drawing.Point(31, 327);
             this.TotalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TotalLabel.Name = "TotalLabel";
             this.TotalLabel.Size = new System.Drawing.Size(39, 19);
@@ -196,7 +200,7 @@
             // AmountDueLabel
             // 
             this.AmountDueLabel.AutoSize = true;
-            this.AmountDueLabel.Location = new System.Drawing.Point(43, 459);
+            this.AmountDueLabel.Location = new System.Drawing.Point(31, 459);
             this.AmountDueLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AmountDueLabel.Name = "AmountDueLabel";
             this.AmountDueLabel.Size = new System.Drawing.Size(86, 19);
@@ -205,7 +209,7 @@
             // 
             // TotalTextbox
             // 
-            this.TotalTextbox.Location = new System.Drawing.Point(321, 324);
+            this.TotalTextbox.Location = new System.Drawing.Point(362, 324);
             this.TotalTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.TotalTextbox.Name = "TotalTextbox";
             this.TotalTextbox.ReadOnly = true;
@@ -214,7 +218,7 @@
             // 
             // AmountDueTextbox
             // 
-            this.AmountDueTextbox.Location = new System.Drawing.Point(321, 456);
+            this.AmountDueTextbox.Location = new System.Drawing.Point(362, 456);
             this.AmountDueTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.AmountDueTextbox.Name = "AmountDueTextbox";
             this.AmountDueTextbox.ReadOnly = true;
@@ -231,47 +235,23 @@
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
             this.Menu.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.Menu.Size = new System.Drawing.Size(888, 25);
+            this.Menu.Size = new System.Drawing.Size(946, 25);
             this.Menu.TabIndex = 15;
             this.Menu.Text = "Menu";
             // 
             // MenuToolStripMenuItem
             // 
             this.MenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NewToolStripMenuItem,
-            this.SaveToolStripMenuItem,
-            this.PrintToolStripMenuItem,
             this.ExitToolStripMenuItem});
             this.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem";
             this.MenuToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.MenuToolStripMenuItem.Text = "File";
             this.MenuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
-            // NewToolStripMenuItem
-            // 
-            this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.NewToolStripMenuItem.Text = "New";
-            this.NewToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
-            // SaveToolStripMenuItem
-            // 
-            this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
-            this.SaveToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.SaveToolStripMenuItem.Text = "Save";
-            this.SaveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // PrintToolStripMenuItem
-            // 
-            this.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem";
-            this.PrintToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.PrintToolStripMenuItem.Text = "Print";
-            this.PrintToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
-            // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -281,6 +261,7 @@
             this.CalculateToolStripMenuItem,
             this.ClearToolStripMenuItem,
             this.FontToolStripMenuItem,
+            this.FontTypeToolStripMenuItem,
             this.ColourToolStripMenuItem,
             this.LanguageToolStripMenuItem});
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
@@ -290,14 +271,14 @@
             // CalculateToolStripMenuItem
             // 
             this.CalculateToolStripMenuItem.Name = "CalculateToolStripMenuItem";
-            this.CalculateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.CalculateToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.CalculateToolStripMenuItem.Text = "Calculate";
             this.CalculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
             // 
             // ClearToolStripMenuItem
             // 
             this.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem";
-            this.ClearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ClearToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.ClearToolStripMenuItem.Text = "Clear";
             this.ClearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
@@ -308,30 +289,61 @@
             this.FontSize12,
             this.FontSize16});
             this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
-            this.FontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.FontToolStripMenuItem.Text = "Font";
+            this.FontToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.FontToolStripMenuItem.Text = "Font Size";
             this.FontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // FontSize2
             // 
             this.FontSize2.Name = "FontSize2";
-            this.FontSize2.Size = new System.Drawing.Size(152, 22);
+            this.FontSize2.Size = new System.Drawing.Size(135, 22);
             this.FontSize2.Text = "8";
             this.FontSize2.Click += new System.EventHandler(this.FontSize2_Click);
             // 
             // FontSize12
             // 
             this.FontSize12.Name = "FontSize12";
-            this.FontSize12.Size = new System.Drawing.Size(152, 22);
-            this.FontSize12.Text = "12";
+            this.FontSize12.Size = new System.Drawing.Size(135, 22);
+            this.FontSize12.Text = "12 (Default)";
             this.FontSize12.Click += new System.EventHandler(this.FontSize12_Click);
             // 
             // FontSize16
             // 
             this.FontSize16.Name = "FontSize16";
-            this.FontSize16.Size = new System.Drawing.Size(152, 22);
+            this.FontSize16.Size = new System.Drawing.Size(135, 22);
             this.FontSize16.Text = "16";
             this.FontSize16.Click += new System.EventHandler(this.FontSize16_Click);
+            // 
+            // FontTypeToolStripMenuItem
+            // 
+            this.FontTypeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TimesNewRomanToolStripMenuItem,
+            this.CalibriToolStripMenuItem,
+            this.ArialToolStripMenuItem});
+            this.FontTypeToolStripMenuItem.Name = "FontTypeToolStripMenuItem";
+            this.FontTypeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.FontTypeToolStripMenuItem.Text = "Font Type";
+            // 
+            // TimesNewRomanToolStripMenuItem
+            // 
+            this.TimesNewRomanToolStripMenuItem.Name = "TimesNewRomanToolStripMenuItem";
+            this.TimesNewRomanToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.TimesNewRomanToolStripMenuItem.Text = "Times New Roman";
+            this.TimesNewRomanToolStripMenuItem.Click += new System.EventHandler(this.TimesNewRomanToolStripMenuItem_Click);
+            // 
+            // CalibriToolStripMenuItem
+            // 
+            this.CalibriToolStripMenuItem.Name = "CalibriToolStripMenuItem";
+            this.CalibriToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.CalibriToolStripMenuItem.Text = "Calibri";
+            this.CalibriToolStripMenuItem.Click += new System.EventHandler(this.CalibriToolStripMenuItem_Click);
+            // 
+            // ArialToolStripMenuItem
+            // 
+            this.ArialToolStripMenuItem.Name = "ArialToolStripMenuItem";
+            this.ArialToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.ArialToolStripMenuItem.Text = "Arial";
+            this.ArialToolStripMenuItem.Click += new System.EventHandler(this.ArialToolStripMenuItem_Click);
             // 
             // ColourToolStripMenuItem
             // 
@@ -340,9 +352,30 @@
             this.LightBlueToolStripMenuItem,
             this.LightYellowToolStripMenuItem});
             this.ColourToolStripMenuItem.Name = "ColourToolStripMenuItem";
-            this.ColourToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ColourToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.ColourToolStripMenuItem.Text = "Colour";
             this.ColourToolStripMenuItem.Click += new System.EventHandler(this.colourToolStripMenuItem_Click);
+            // 
+            // WhiteDefaultToolStripMenuItem
+            // 
+            this.WhiteDefaultToolStripMenuItem.Name = "WhiteDefaultToolStripMenuItem";
+            this.WhiteDefaultToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.WhiteDefaultToolStripMenuItem.Text = "White (Default)";
+            this.WhiteDefaultToolStripMenuItem.Click += new System.EventHandler(this.whiteDefaultToolStripMenuItem_Click);
+            // 
+            // LightBlueToolStripMenuItem
+            // 
+            this.LightBlueToolStripMenuItem.Name = "LightBlueToolStripMenuItem";
+            this.LightBlueToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.LightBlueToolStripMenuItem.Text = "Light Blue";
+            this.LightBlueToolStripMenuItem.Click += new System.EventHandler(this.lightBlueToolStripMenuItem_Click);
+            // 
+            // LightYellowToolStripMenuItem
+            // 
+            this.LightYellowToolStripMenuItem.Name = "LightYellowToolStripMenuItem";
+            this.LightYellowToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.LightYellowToolStripMenuItem.Text = "Light Yellow";
+            this.LightYellowToolStripMenuItem.Click += new System.EventHandler(this.lightYellowToolStripMenuItem_Click);
             // 
             // LanguageToolStripMenuItem
             // 
@@ -351,7 +384,7 @@
             this.FrenchToolStripMenuItem,
             this.SpanishToolStripMenuItem});
             this.LanguageToolStripMenuItem.Name = "LanguageToolStripMenuItem";
-            this.LanguageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.LanguageToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.LanguageToolStripMenuItem.Text = "Language";
             // 
             // EnglishDefaultToolStripMenuItem
@@ -398,11 +431,11 @@
             this.AdditionalItemsGroupBox.Controls.Add(this.ComputerNavigationCheckBox);
             this.AdditionalItemsGroupBox.Controls.Add(this.LeatherInteriorCheckBox);
             this.AdditionalItemsGroupBox.Controls.Add(this.StereoSystemCheckBox);
-            this.AdditionalItemsGroupBox.Location = new System.Drawing.Point(502, 69);
+            this.AdditionalItemsGroupBox.Location = new System.Drawing.Point(537, 69);
             this.AdditionalItemsGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.AdditionalItemsGroupBox.Name = "AdditionalItemsGroupBox";
             this.AdditionalItemsGroupBox.Padding = new System.Windows.Forms.Padding(4);
-            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(334, 248);
+            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(373, 248);
             this.AdditionalItemsGroupBox.TabIndex = 16;
             this.AdditionalItemsGroupBox.TabStop = false;
             this.AdditionalItemsGroupBox.Text = "Additional Items";
@@ -481,11 +514,11 @@
             this.ExteriorFinishBox.Controls.Add(this.CustomDetailingRadioButton);
             this.ExteriorFinishBox.Controls.Add(this.PearlizedRadioButton);
             this.ExteriorFinishBox.Controls.Add(this.StandardRadioButton);
-            this.ExteriorFinishBox.Location = new System.Drawing.Point(502, 331);
+            this.ExteriorFinishBox.Location = new System.Drawing.Point(537, 331);
             this.ExteriorFinishBox.Margin = new System.Windows.Forms.Padding(4);
             this.ExteriorFinishBox.Name = "ExteriorFinishBox";
             this.ExteriorFinishBox.Padding = new System.Windows.Forms.Padding(4);
-            this.ExteriorFinishBox.Size = new System.Drawing.Size(334, 151);
+            this.ExteriorFinishBox.Size = new System.Drawing.Size(373, 151);
             this.ExteriorFinishBox.TabIndex = 17;
             this.ExteriorFinishBox.TabStop = false;
             this.ExteriorFinishBox.Text = "Exterior Finish";
@@ -531,7 +564,7 @@
             // CalculateButton
             // 
             this.CalculateButton.BackColor = System.Drawing.Color.Green;
-            this.CalculateButton.Location = new System.Drawing.Point(47, 558);
+            this.CalculateButton.Location = new System.Drawing.Point(35, 515);
             this.CalculateButton.Margin = new System.Windows.Forms.Padding(4);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(112, 36);
@@ -543,7 +576,7 @@
             // ClearButton
             // 
             this.ClearButton.BackColor = System.Drawing.Color.Yellow;
-            this.ClearButton.Location = new System.Drawing.Point(397, 558);
+            this.ClearButton.Location = new System.Drawing.Point(398, 515);
             this.ClearButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(112, 36);
@@ -555,7 +588,7 @@
             // ExitButton
             // 
             this.ExitButton.BackColor = System.Drawing.Color.Red;
-            this.ExitButton.Location = new System.Drawing.Point(724, 558);
+            this.ExitButton.Location = new System.Drawing.Point(724, 515);
             this.ExitButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(112, 36);
@@ -564,33 +597,32 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // WhiteDefaultToolStripMenuItem
+            // label1
             // 
-            this.WhiteDefaultToolStripMenuItem.Name = "WhiteDefaultToolStripMenuItem";
-            this.WhiteDefaultToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.WhiteDefaultToolStripMenuItem.Text = "White (Default)";
-            this.WhiteDefaultToolStripMenuItem.Click += new System.EventHandler(this.whiteDefaultToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(338, 396);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 19);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "$";
             // 
-            // LightBlueToolStripMenuItem
+            // label2
             // 
-            this.LightBlueToolStripMenuItem.Name = "LightBlueToolStripMenuItem";
-            this.LightBlueToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.LightBlueToolStripMenuItem.Text = "Light Blue";
-            this.LightBlueToolStripMenuItem.Click += new System.EventHandler(this.lightBlueToolStripMenuItem_Click);
-            // 
-            // LightYellowToolStripMenuItem
-            // 
-            this.LightYellowToolStripMenuItem.Name = "LightYellowToolStripMenuItem";
-            this.LightYellowToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.LightYellowToolStripMenuItem.Text = "Light Yellow";
-            this.LightYellowToolStripMenuItem.Click += new System.EventHandler(this.lightYellowToolStripMenuItem_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(338, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 19);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "$";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(888, 617);
+            this.ClientSize = new System.Drawing.Size(946, 577);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
@@ -616,6 +648,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Sharp Auto Center";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.AdditionalItemsGroupBox.ResumeLayout(false);
@@ -645,9 +678,6 @@
         private System.Windows.Forms.TextBox AmountDueTextbox;
         private System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem MenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SaveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem PrintToolStripMenuItem;
         private System.Windows.Forms.GroupBox AdditionalItemsGroupBox;
         private System.Windows.Forms.CheckBox ComputerNavigationCheckBox;
         private System.Windows.Forms.CheckBox LeatherInteriorCheckBox;
@@ -680,6 +710,12 @@
         private System.Windows.Forms.ToolStripMenuItem WhiteDefaultToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LightBlueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LightYellowToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem FontTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TimesNewRomanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CalibriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ArialToolStripMenuItem;
     }
 }
 

@@ -21,16 +21,20 @@ namespace Assignment2
     public partial class Form1 : Form
     {
         // Variables
-        String Language = "English";
-        Double AdditionalOptions = 0;
-        Double BasePrice;
-        Double TradeInAllowance;
+        private String _Language = "English";
+        private Double _AdditonalOptions = 0;
+        private Double _BasePrice;
+        private Double _TradeInAllowance;
+        private Boolean _IsValid;
+        private String _FontStyle = "Times New Roman";
+        private int _FontSize = 12;
 
-        /* -------- Labels ----------------------------------------------------------- */
-        private void label1_Click(object sender, EventArgs e)
-                {
 
-                }
+            /* -------- Labels ----------------------------------------------------------- */
+            private void label1_Click(object sender, EventArgs e)
+            {
+
+            }
             private void BasePriceLabel_Click(object sender, EventArgs e)
             {
 
@@ -38,12 +42,12 @@ namespace Assignment2
         /* -------- End of Labels ---------------------------------------------------- */
 
 
-        /* -------- Language --------------------------------------------------------- */
+        /* -------- _Language --------------------------------------------------------- */
             // English
             private void englishDefaultToolStripMenuItem_Click(object sender, EventArgs e)
             {
-                // Set language.
-                Language = "English";
+                // Set _Language.
+                _Language = "English";
 
                 // Update labels.
                 BasePriceLabel.Text = "Base Price";
@@ -61,14 +65,12 @@ namespace Assignment2
 
                 // Update menu links.
                 MenuToolStripMenuItem.Text = "File";
-                NewToolStripMenuItem.Text = "New";
-                SaveToolStripMenuItem.Text = "Save";
-                PrintToolStripMenuItem.Text = "Print";
                 ExitToolStripMenuItem.Text = "Exit";
                 EditToolStripMenuItem.Text = "Edit";
                 CalculateToolStripMenuItem.Text = "Calculate";
                 ClearToolStripMenuItem.Text = "Clear";
                 FontToolStripMenuItem.Text = "Font";
+                FontSize12.Text = "12 (Default)";
                 ColourToolStripMenuItem.Text = "Colour";
                 WhiteDefaultToolStripMenuItem.Text = "White";
                 LightBlueToolStripMenuItem.Text = "Light Blue";
@@ -99,8 +101,8 @@ namespace Assignment2
             // French
             private void frenchToolStripMenuItem_Click(object sender, EventArgs e)
             {
-                // Set language.
-                Language = "French";
+                // Set _Language.
+                _Language = "French";
 
                 // Update labels.
                 BasePriceLabel.Text = "Prix ​​de Base";
@@ -118,14 +120,12 @@ namespace Assignment2
 
                 // Update menu links.
                 MenuToolStripMenuItem.Text = "Fichier";
-                NewToolStripMenuItem.Text = "Nouveau";
-                SaveToolStripMenuItem.Text = "Sauvegarder";
-                PrintToolStripMenuItem.Text = "Impression";
                 ExitToolStripMenuItem.Text = "Sortie";
                 EditToolStripMenuItem.Text = "Modifier";
                 CalculateToolStripMenuItem.Text = "Calculer";
                 ClearToolStripMenuItem.Text = "Clair";
                 FontToolStripMenuItem.Text = "Police de Caractère";
+                FontSize12.Text = "12";
                 ColourToolStripMenuItem.Text = "Couleur";
                 WhiteDefaultToolStripMenuItem.Text = "Blanc";
                 LightBlueToolStripMenuItem.Text = "Bleu Clair";
@@ -157,7 +157,7 @@ namespace Assignment2
             private void spanishToolStripMenuItem_Click(object sender, EventArgs e)
                 {
                     // Set language.
-                    Language = "Spanish";
+                    _Language = "Spanish";
 
                     // Update labels.
                     BasePriceLabel.Text = "Precio Base";
@@ -175,14 +175,12 @@ namespace Assignment2
 
                     // Update menu links.
                     MenuToolStripMenuItem.Text = "Archivo";
-                    NewToolStripMenuItem.Text = "Nuevo";
-                    SaveToolStripMenuItem.Text = "Salvar";
-                    PrintToolStripMenuItem.Text = "Impresión";
                     ExitToolStripMenuItem.Text = "Salida";
                     EditToolStripMenuItem.Text = "Editar";
                     CalculateToolStripMenuItem.Text = "Calcular";
                     ClearToolStripMenuItem.Text = "Claro";
                     FontToolStripMenuItem.Text = "Fuente";
+                    FontSize12.Text = "12";
                     ColourToolStripMenuItem.Text = "Color";
                     WhiteDefaultToolStripMenuItem.Text = "Blanco";
                     LightBlueToolStripMenuItem.Text = "Azul Claro";
@@ -234,24 +232,6 @@ namespace Assignment2
 
 
         /* -------- Menu ------------------------------------------------------------- */
-            // File / New
-            private void newToolStripMenuItem_Click(object sender, EventArgs e)
-                {
-                    New();
-                }
-
-            // File / Save
-            private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                Save();
-            }
-
-            // File / Print
-            private void printToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                Print();
-            }
-
             // File / Exit
             private void exitToolStripMenuItem_Click(object sender, EventArgs e)
             {
@@ -270,7 +250,7 @@ namespace Assignment2
                 Clear();
             }
 
-            // Edit / Font
+            // Edit / Font Size
             private void fontToolStripMenuItem_Click(object sender, EventArgs e)
             {
 
@@ -287,15 +267,15 @@ namespace Assignment2
             {
                 try
                 {
-                    if (Language == "English")
+                    if (_Language == "English")
                     {
                         MessageBox.Show("This program calculates the amount due on a New or Used Vehicle.");
                     }
-                    else if (Language == "French")
+                    else if (_Language == "French")
                     {
                         MessageBox.Show("Ce programme calcule le montant dû sur un véhicule neuf ou d'occasion.");
                     }
-                    else if (Language == "Spanish")
+                    else if (_Language == "Spanish")
                     {
                         MessageBox.Show("Este programa calcula la cantidad debida en un vehículo nuevo o usado.");
                     }
@@ -307,69 +287,86 @@ namespace Assignment2
             }
         /* -------- End of Menu ------------------------------------------------------ */
 
-        /* ---==---- Font Size --------------------------------===---------------------- */
+        /* ---==---- Change Font --------------------------------===---------------------- */
             private void FontSize16_Click(object sender, EventArgs e)
             {
-                ChangeFont(16);
+                _FontSize = 16;
+                ChangeFont(_FontStyle, _FontSize);
             }
             private void FontSize12_Click(object sender, EventArgs e)
             {
-                ChangeFont(12);
+                _FontSize = 12;
+                ChangeFont(_FontStyle, _FontSize);
             }
             private void FontSize2_Click(object sender, EventArgs e)
             {
-                ChangeFont(8);
+                _FontSize = 8;
+                ChangeFont(_FontStyle, _FontSize);
             }
-            public void ChangeFont(int Size)
+            // Times New Roman font style.
+            private void TimesNewRomanToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                _FontStyle = "Times New Roman";
+                ChangeFont(_FontStyle, _FontSize);
+            }
+            // Calibri font style.
+            private void CalibriToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                _FontStyle = "Calibri";
+                ChangeFont(_FontStyle, _FontSize);
+            }
+            // Arial font style.
+            private void ArialToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                _FontStyle = "Arial";
+                ChangeFont(_FontStyle, _FontSize);
+            }
+            // This method changes all the font on the page to the variables set beforehand.
+            public void ChangeFont(String _FontStyle, int _FontSize)
                 {
-                    String FontStyle = "Times New Roman";
-
                     // Update Labels.
-                    BasePriceLabel.Font = new Font(FontStyle, Size);
-                    AdditionalOptionsLabel.Font = new Font(FontStyle, Size);
-                    SubTotalLabel.Font = new Font(FontStyle, Size);
-                    SalesTaxLabel.Font = new Font(FontStyle, Size);
-                    TotalLabel.Font = new Font(FontStyle, Size);
-                    TradeInAllowanceLabel.Font = new Font(FontStyle, Size);
-                    AmountDueLabel.Font = new Font(FontStyle, Size);
+                    BasePriceLabel.Font = new Font(_FontStyle, _FontSize);
+                    AdditionalOptionsLabel.Font = new Font(_FontStyle, _FontSize);
+                    SubTotalLabel.Font = new Font(_FontStyle, _FontSize);
+                    SalesTaxLabel.Font = new Font(_FontStyle, _FontSize);
+                    TotalLabel.Font = new Font(_FontStyle, _FontSize);
+                    TradeInAllowanceLabel.Font = new Font(_FontStyle, _FontSize);
+                    AmountDueLabel.Font = new Font(_FontStyle, _FontSize);
 
                     // Update buttons text.
-                    CalculateButton.Font = new Font(FontStyle, Size);
-                    ClearButton.Font = new Font(FontStyle, Size);
-                    ExitButton.Font = new Font(FontStyle, Size);
+                    CalculateButton.Font = new Font(_FontStyle, _FontSize);
+                    ClearButton.Font = new Font(_FontStyle, _FontSize);
+                    ExitButton.Font = new Font(_FontStyle, _FontSize);
 
                     // Update menu links.
-                    MenuToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    NewToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    SaveToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    PrintToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    ExitToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    EditToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    CalculateToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    ClearToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    FontToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    ColourToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    LanguageToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    HelpToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    AboutToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    EnglishDefaultToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    FrenchToolStripMenuItem.Font = new Font(FontStyle, Size);
-                    SpanishToolStripMenuItem.Font = new Font(FontStyle, Size);
+                    MenuToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    ExitToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    EditToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    CalculateToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    ClearToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    FontToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    ColourToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    LanguageToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    HelpToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    AboutToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    EnglishDefaultToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    FrenchToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
+                    SpanishToolStripMenuItem.Font = new Font(_FontStyle, _FontSize);
 
                     // Update additional options labels. 
-                    AdditionalItemsGroupBox.Font = new Font(FontStyle, Size);
-                    StereoSystemCheckBox.Font = new Font(FontStyle, Size);
-                    LeatherInteriorCheckBox.Font = new Font(FontStyle, Size);
-                    ComputerNavigationCheckBox.Font = new Font(FontStyle, Size);
-                    PerformancePackageCheckBox.Font = new Font(FontStyle, Size);
-                    SunRoofCheckBox.Font = new Font(FontStyle, Size);
-                    ExtendedWarrantyCheckBox.Font = new Font(FontStyle, Size);
+                    AdditionalItemsGroupBox.Font = new Font(_FontStyle, _FontSize);
+                    StereoSystemCheckBox.Font = new Font(_FontStyle, _FontSize);
+                    LeatherInteriorCheckBox.Font = new Font(_FontStyle, _FontSize);
+                    ComputerNavigationCheckBox.Font = new Font(_FontStyle, _FontSize);
+                    PerformancePackageCheckBox.Font = new Font(_FontStyle, _FontSize);
+                    SunRoofCheckBox.Font = new Font(_FontStyle, _FontSize);
+                    ExtendedWarrantyCheckBox.Font = new Font(_FontStyle, _FontSize);
 
                     // Update Exterior Finish labels.
-                    ExteriorFinishBox.Font = new Font(FontStyle, Size);
-                    StandardRadioButton.Font = new Font(FontStyle, Size);
-                    PearlizedRadioButton.Font = new Font(FontStyle, Size);
-                    CustomDetailingRadioButton.Font = new Font(FontStyle, Size);
+                    ExteriorFinishBox.Font = new Font(_FontStyle, _FontSize);
+                    StandardRadioButton.Font = new Font(_FontStyle, _FontSize);
+                    PearlizedRadioButton.Font = new Font(_FontStyle, _FontSize);
+                    CustomDetailingRadioButton.Font = new Font(_FontStyle, _FontSize);
                 }
         /* ---==---- End Font Size --------------------------------===------------------ */
 
@@ -394,99 +391,181 @@ namespace Assignment2
         /* ---==---- End of Change Colour --------------------------------===--------- */
 
         /* ---==---- Methods --------------------------------===---------------------- */
-        private void Calculate()
+            // This method calculates all variables.
+            private void Calculate()
             {
+                _IsValid = true;
                 try
                 {
-                    // Get values from user.
+                    // Try converting to double.
                     try
                     {
-                        BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
+                        _BasePrice = Convert.ToDouble(BasePriceTextbox.Text);
                     }
                     catch
                     {
-                        if (Language == "English")
+                        _IsValid = false;
+                        if (_Language == "English")
                         {
                             MessageBox.Show(":( Base price has an invalid input.");
                         }
-                        else if (Language == "French")
+                        else if (_Language == "French")
                         {
                             MessageBox.Show(":( Prix ​​de base a une entrée non valide.");
                         }
-                        else if (Language == "Spanish")
+                        else if (_Language == "Spanish")
                         {
                             MessageBox.Show(":( Precio base tiene una entrada no válida.");
                         }
                     }
+                    // Checks if negative base price was entered.
+                    if (_BasePrice < 0)
+                    {
+                        _IsValid = false;
+                        if (_Language == "English")
+                        {
+                            MessageBox.Show(":( Base price must be greater than 0.");
+                        }
+                        else if (_Language == "French")
+                        {
+                            MessageBox.Show(":( Prix ​​de base doit être supérieur à 0.");
+                        }
+                        else if (_Language == "Spanish")
+                        {
+                            MessageBox.Show(":( Precio base debe ser mayor que 0.");
+                        }
+                    }
+                    // Checks that base price is less than 3,000,000.
+                    else if (_BasePrice > 3000000)
+                    {
+                        _IsValid = false;
+                        if (_Language == "English")
+                        {
+                            MessageBox.Show(":( Base price must be less than 3,000,000.");
+                        }
+                        else if (_Language == "French")
+                        {
+                            MessageBox.Show(":( Prix ​​de base doit être inférieure à 3,000,000.");
+                        }
+                        else if (_Language == "Spanish")
+                        {
+                            MessageBox.Show(":( Precio base debe ser inferior a 3,000,000.");
+                        }
+                    }
+
+                    // Try converting to double.
                     try
                     {
-                        TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
+                        _TradeInAllowance = Convert.ToDouble(TradeInAllowanceTextbox.Text);
                     }
                     catch
                     {
-                        if (Language == "English")
+                        _IsValid = false;
+                        if (_Language == "English")
                         {
                             MessageBox.Show(":( Trade in allowance has an invalid input.");
                         }
-                        else if (Language == "French")
+                        else if (_Language == "French")
                         {
                             MessageBox.Show(":( Commerce de l'allocation a une entrée non valide.");
                         }
-                        else if (Language == "Spanish")
+                        else if (_Language == "Spanish")
                         {
                             MessageBox.Show(":( El comercio de asignación tiene una entrada no válida.");
                         }
                     }
-
-                    // Calculate additional options.
-                    CalculateAdditionalOptions();
-                
-                    AdditionalOptions = Convert.ToDouble(AdditionalOptionsTextbox.Text);
-                    Double Subtotal = BasePrice + AdditionalOptions;
-                    SubTotalTextbox.Text = Subtotal.ToString();
-                    SalesTaxTextbox.Text = "13%";
-                    Double Total = Subtotal * 1.13;
-                    Total = Math.Round(Total, 2);
-                    TotalTextbox.Text = Total.ToString();
-                    Double AmountDue = Total - TradeInAllowance;
-
-                    // Change text box colour based on amount owing.
-                    if (AmountDue > 0)
+                    // Check if negative trade in amount is used and show a message.
+                    if (_TradeInAllowance < 0)
                     {
-                        AmountDueTextbox.ForeColor = Color.Red;
-                        AmountDueTextbox.BackColor = Color.White;
+                        _IsValid = false;
+                        if (_Language == "English")
+                        {
+                            MessageBox.Show(":( Trade-In Allowance must be greater than 0.");
+                        }
+                        else if (_Language == "French")
+                        {
+                            MessageBox.Show(":( Trade - In allocation doit être supérieure à 0.");
+                        }
+                        else if (_Language == "Spanish")
+                        {
+                            MessageBox.Show(":( En el comercio Asignación debe ser mayor que 0.");
+                        }
                     }
-                    else if (AmountDue < 0)
+                    // Checks if a large trade in was used.
+                    if (_TradeInAllowance > 3000000)
                     {
-                        AmountDueTextbox.ForeColor = Color.Green;
-                        AmountDueTextbox.BackColor = Color.White;
-                    }
+                        _IsValid = false;
+                        if (_Language == "English")
+                        {
+                            MessageBox.Show(":( Trade-In Allowance must be less than 3,000,000.");
+                        }
+                        else if (_Language == "French")
+                        {
+                            MessageBox.Show(":( Trade-In allocation doit être inférieur à 3,000,000.");
+                        }
+                        else if (_Language == "Spanish")
+                        {
+                            MessageBox.Show(":( En el comercio Asignación debe ser inferior a 3,000,000.");
+                        }
+                    } // End of else if.
 
-                    AmountDueTextbox.Text = AmountDue.ToString();
-                } // End of try.
+                    // If user enters valid inputs, do below code. Else do nothing.
+                    if (_IsValid == true)
+                    {
+                        // Round BasePrice and TradeInAllowance then submit it back into form.
+                        BasePriceTextbox.Text = Math.Round(_BasePrice, 2).ToString();
+                        TradeInAllowanceTextbox.Text = Math.Round(_TradeInAllowance, 2).ToString();
+
+                        // Calculate additional options.
+                        CalculateAdditionalOptions();
+
+                        //AdditionalOptions = Convert.ToDouble(AdditionalOptionsTextbox.Text); Not needed anymore.
+                        Double Subtotal = _BasePrice + _AdditonalOptions;
+                        SubTotalTextbox.Text = String.Format("{0:C}", Subtotal);
+                        SalesTaxTextbox.Text = "13%";
+                        Double Total = Subtotal * 1.13;
+                        TotalTextbox.Text = String.Format("{0:C}", Total);
+                        Double AmountDue = Total - _TradeInAllowance;
+
+                        // Change text box colour based on amount owing.
+                        if (AmountDue > 0)
+                        {
+                            AmountDueTextbox.ForeColor = Color.Red;
+                            AmountDueTextbox.BackColor = Color.White;
+                        }
+                        else if (AmountDue < 0)
+                        {
+                            AmountDueTextbox.ForeColor = Color.Green;
+                            AmountDueTextbox.BackColor = Color.White;
+                        }
+
+                        AmountDueTextbox.Text = String.Format("{0:C}", AmountDue);
+                    } // End of try.
+                }
                 catch
                 {
-                    if (Language == "English")
+                    if (_Language == "English")
                     {
                         MessageBox.Show(":( General Error.");
                     }
-                    else if (Language == "French")
+                    else if (_Language == "French")
                     {
                         MessageBox.Show(":( Erreur générale.");
                     }
-                    else if (Language == "Spanish")
+                    else if (_Language == "Spanish")
                     {
                         MessageBox.Show(":( Error general.");
                     }
-                }
-        } // End of Calculate method.
+                } // End of catch.     
+            } // End of Calculate method.
+            // This method clears everything on the form and sets variables (other than style) to default.
             public void Clear()
                 {
                     try
                     {
                         // This clear each field individually.
                         BasePriceTextbox.Text = String.Empty;
-                        TradeInAllowanceTextbox.Text = String.Empty;
+                        TradeInAllowanceTextbox.Text = "0";
                         AdditionalOptionsTextbox.Text = String.Empty;
                         SubTotalTextbox.Text = String.Empty;
                         SalesTaxTextbox.Text = String.Empty;
@@ -505,19 +584,20 @@ namespace Assignment2
                         MessageBox.Show("There was an error clearing the form.");
                     }
                 }
+            // This method askes you if you want to exit. If yes, exits the program. If no, does nothing.
             public void Exit()
             {
                 // This determines the error string.
                 String MessageString = "";
-                if (Language == "English")
+                if (_Language == "English")
                 {
                     MessageString = "Are you sure you want to exit?";
                 }
-                else if (Language == "French")
+                else if (_Language == "French")
                 {
                     MessageString = "Êtes-vous sûr de vouloir quitter?";
                 }
-                else if (Language == "Spanish")
+                else if (_Language == "Spanish")
                 {
                     MessageString = "Seguro que quieres salir?";
                 }
@@ -528,56 +608,45 @@ namespace Assignment2
                     Application.Exit();
                 }
             }
-            public void New()
-            {
-
-            }
-            public void Save()
-            {
-
-            }
-            public void Print()
-            {
-
-            }
+            // This method calculates the additional options that the calculate method uses after.
             public void CalculateAdditionalOptions()
             {
                 // Clears existing values.
-                AdditionalOptions = 0;
+                _AdditonalOptions = 0;
 
                 if (StereoSystemCheckBox.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 425.76;
+                    _AdditonalOptions = _AdditonalOptions + 425.76;
                 }
                 if (LeatherInteriorCheckBox.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 987.41;
+                    _AdditonalOptions = _AdditonalOptions + 987.41;
                 }
                 if (ComputerNavigationCheckBox.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 1741.23;
+                    _AdditonalOptions = _AdditonalOptions + 1741.23;
                 }
                 if (PerformancePackageCheckBox.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 3478.24;
+                    _AdditonalOptions = _AdditonalOptions + 3478.24;
                 }
                 if (SunRoofCheckBox.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 298.71;
+                    _AdditonalOptions = _AdditonalOptions + 298.71;
                 }
                 if (ExtendedWarrantyCheckBox.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 1645.21;
+                    _AdditonalOptions = _AdditonalOptions + 1645.21;
                 }
                 if (PearlizedRadioButton.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 345.72;
+                    _AdditonalOptions = _AdditonalOptions + 345.72;
                 }
                 if (CustomDetailingRadioButton.Checked == true)
                 {
-                    AdditionalOptions = AdditionalOptions + 599.99;
+                    _AdditonalOptions = _AdditonalOptions + 599.99;
                 }
-                AdditionalOptionsTextbox.Text = AdditionalOptions.ToString();
+                AdditionalOptionsTextbox.Text = String.Format("{0:C}", _AdditonalOptions);
             }
         /* ----=---- End of Methods ------------------------------------------------------ */
 
@@ -642,6 +711,10 @@ namespace Assignment2
 
         }
         private void AmountDueTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
